@@ -11,12 +11,12 @@ public class GuessGame {
         SecureRandom numbers = new SecureRandom();
 
         int guess = numbers.nextInt(1000);
-        int numberOfTries = 0;
+        int numberOfGuess = 0;
         int num;
         do {
             System.out.println("Guess a number between 1 and 1000");
              num = scan.nextInt();
-            numberOfTries++;
+            numberOfGuess++;
 
             if (num < guess) {
                 System.out.println("Too Low.. Try Again!!!!!!");
