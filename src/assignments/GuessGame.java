@@ -9,8 +9,7 @@ public class GuessGame {
         int count;
 
         SecureRandom numbers = new SecureRandom();
-        int min = 1;
-        int max = 1000;
+
         int guess = numbers.nextInt(1000);
         int numberOfTries = 0;
         int num;
