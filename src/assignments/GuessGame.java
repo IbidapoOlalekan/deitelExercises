@@ -30,5 +30,19 @@ public class GuessGame {
         }
         while (num != guess);
 
+        System.out.printf("The number of trial is %d%n", numberOfGuess);
+        if (numberOfGuess < 10){
+            System.out.println("Either you know the secret or You got lucky");
+        }
+        else {
+            if (numberOfGuess == 10){
+                System.out.println("Aha. You know the secret");
+            }
+            else {
+                System.out.println("You should be able to do better!!!!!");
+            }
+
+        }
+
     }
 }
