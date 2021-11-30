@@ -19,6 +19,7 @@ public class LargestNumber {
         num = scan.nextInt();
         largest = num;
         while (count < 10) {
+            System.out.println("Enter a number:  ");
             num = scan.nextInt();
             count++;
             if (largest < num) {
