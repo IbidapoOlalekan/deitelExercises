@@ -38,4 +38,11 @@ public class KataTest {
         char myResult = gradeSomething.calculateGradeFor(59);
         assertEquals('F',myResult);
     }
+    @Test
+    public void checkQuantitiesBetweenOneAndFour(){
+        Cata prices = new Cata();
+        int numberOfQuantities  = 2;
+        int price = prices.calculatePriceFor(numberOfQuantities);
+        assertEquals(2000 * numberOfQuantities,price);
+    }
 }
