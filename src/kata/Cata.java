@@ -16,14 +16,29 @@ public class Cata {
 
     public int calculatePriceFor(int numberOfQuantities){
         if (numberOfQuantities >= 1 && numberOfQuantities <= 4){
-            int price = numberOfQuantities *  2000;
-            return price;
+            return numberOfQuantities *  2000;
+
         }
         if (numberOfQuantities >= 5 && numberOfQuantities <= 9){
-            int price = numberOfQuantities * 1800;
-            return price;
+            return numberOfQuantities * 1800;
+
         }
-        return numberOfQuantities * 5000;
+        if(numberOfQuantities >= 10 && numberOfQuantities <= 29){
+            return  numberOfQuantities * 1600;
+        }
+        if (numberOfQuantities >= 30 && numberOfQuantities <= 49){
+            return numberOfQuantities * 1500;
+        }
+        if (numberOfQuantities >= 50 && numberOfQuantities <= 99){
+            return numberOfQuantities * 1300;
+        }
+        if (numberOfQuantities >= 100 && numberOfQuantities <= 199){
+            return numberOfQuantities * 1200;
+        }
+        if (numberOfQuantities >= 200 && numberOfQuantities <= 499){
+            return numberOfQuantities * 1100;
+        }
+        return numberOfQuantities * 1000;
     }
 
 }
