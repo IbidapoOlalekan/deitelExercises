@@ -4,41 +4,41 @@ import java.util.Scanner;
 
 public class ArithmeticSmallest {
     public static void main(String[] args) {
-         Scanner scan = new Scanner(System.in);
-         System.out.println("Enter a number: ");
-         int number= scan.nextInt();
-         System.out.println("Enter a number: ");
-         int numbertwo = scan.nextInt();
-         System.out.println("Enter a number: ");
-         int numberthree = scan.nextInt();
+        Scanner scan = new Scanner(System.in);
 
-         if (number > numbertwo & number > numberthree){
-         System.out.printf("%d is the largest%n",number);
-         }
-         else {
 
-         if (numbertwo > number & numbertwo > numberthree) {
-         System.out.printf("%d is the largest%n", numbertwo);
+        int num;
+
+        int maximum;
+        int minimum;
+
+
+        int count = 1;
+
+
+        askForNumber();
+        num = scan.nextInt();
+        maximum = num;
+        minimum = num;
+        while (count < 3) {
+            askForNumber();
+            num = scan.nextInt();
+            count++;
+            if (maximum < num) {
+                maximum = num;
+
+            }
+           if (minimum > num){
+               minimum = num;
+           }
+
+
+        }
+        System.out.printf("The largest number is %d%n",maximum);
+        System.out.printf("The smallest number is %d%n",minimum);
          }
 
-         else {
-         if (numberthree > number & numberthree > numbertwo){
-         System.out.printf("%d is the largest%n", numberthree);
-         }
-
-         }
-         }
-
-         if (number < numbertwo & number < numberthree) {
-         System.out.printf("%d is the smallest%n",number);
-         }
-         else {
-         if (numbertwo < number & numbertwo < numberthree){
-         System.out.printf("%d is the smallest%n", numbertwo);
-         }
-         else {
-         System.out.printf("%d is the smallest%n",numberthree);
-         }
-         }
+    public static  void askForNumber(){
+         System.out.println("Enter A Number: ");
     }
 }
