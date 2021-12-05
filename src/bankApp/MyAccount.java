@@ -28,4 +28,17 @@ public class MyAccount {
 
 
     }
+
+    public void withdraw(String pin, int withdrawalAmount) {
+        if (withdrawalAmount > 0 && withdrawalAmount <= balance) {
+            balance = balance - withdrawalAmount;
+        }
+
+
+    }
+
+
+    public void setPin(String pin) {
+        this.balance = balance;
+    }
 }
