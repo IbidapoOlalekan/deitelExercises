@@ -19,7 +19,8 @@ public class AirConditioner {
     }
 
     public int getTemperature() {
-       if (!isOn){
+       if (!
+               isOn){
            return 0;
        }
        return temperature;

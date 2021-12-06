@@ -4,6 +4,7 @@ public class Native {
     private int scvId;
     private String name;
 
+
     public Native(String name, int scvId){
         this.name = name;
         this.scvId = scvId;
