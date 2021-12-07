@@ -24,4 +24,10 @@ public class Human {
     public void setGender(Gender gender) {
         this.gender = gender;
     }
+
+    public String toString(){
+        String stringToReturn ="";
+        stringToReturn = "Human Name: " + getName() + " Human Gender:  " + getGender();
+        return stringToReturn;
+    }
 }

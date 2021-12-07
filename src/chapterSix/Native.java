@@ -8,7 +8,10 @@ public class Native {
     public Native(String name, int scvId){
         this.name = name;
         this.scvId = scvId;
+
     }
+
+
 
 
 
