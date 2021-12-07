@@ -22,7 +22,7 @@ public class Human {
     }
 
     public void setGender(Gender gender) {
-        this.gender = gender;
+        this.gender =  gender;
     }
 
     public String toString(){
