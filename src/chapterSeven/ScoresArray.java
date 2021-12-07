@@ -9,31 +9,32 @@ public class ScoresArray {
         int count= 0;
         int max  = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
-        int[] score= new int[10];
+        int[] scores= new int[10];
 
-        for ( int i = 0; i < score.length; i++){
-            System.out.println("Enter a score: ");
-                score[i] = scanner.nextInt();
+        for ( int i = 0; i < scores.length; i++){
+            System.out.println("Enter a scores: ");
+                scores[i] = scanner.nextInt();
 
-                total += score[i];
+                total += scores[i];
 
-                if (max < score[i]){
-                    max = score[i];
+                if (max < scores[i]){
+                    max = scores[i];
                 }
 
-                if (min > score[i]){
-                    min = score[i];
+                if (min > scores[i]){
+                    min = scores[i];
                     count++;
                 }
 
         }
-        for (int i : score){
-            System.out.print(i + " ");
+        for (int score : scores){
+            System.out.print(score + " ");
+            System.out.println();
 
         }
 
         double average = (double) total / count;
-        System.out.printf("The total score is %d%n", total);
+        System.out.printf("The total scores is %d%n", total);
         System.out.printf("The average is %.2f%n",average);
         System.out.printf("The maximum value is %d%n ",max);
         System.out.printf("The minimum value is %d%n", min);
