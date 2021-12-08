@@ -92,4 +92,31 @@ public class KataTest {
         int price = prices.calculatePriceFor(numberOfQuantities);
         assertEquals(1000 * numberOfQuantities,price);
     }
+
+    @Test
+    public void arraysTotalCanBeCalculated(){
+        int[] numbers = {1,2,3,4,5};
+        int result = Kata.calculateTotalOf(numbers);
+        assertEquals(15,result);
+    }
+
+    @Test
+    public void arrayMinimumCanBeDetermined(){
+        int[] numbers = {1,2,3,4,5};
+        int minimum = Kata.determineMinimumOf(numbers);
+        assertEquals(1,minimum);
+    }
+
+    @Test
+    public void arrayMaximumCanBeDetermined(){
+        int[] numbers = {1,2,3,4,5};
+        int maximum = Kata.determineMaximumOf(numbers);
+        assertEquals(5,maximum);
+    }
+    @Test
+    public void arrayAverageCanBeCalculated(){
+        int[] numbers = {1,2,3,4,5};
+        double average = Kata.calculateAverageOf(numbers);
+        assertEquals(3,average);
+    }
 }
