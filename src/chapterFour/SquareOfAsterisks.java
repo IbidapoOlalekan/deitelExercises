@@ -9,8 +9,11 @@ public class SquareOfAsterisks {
         int size = scan.nextInt();
 
         for (int i = 1; i <= size; i++){
-            System.out.print("*");
-            System.out.println("*");
+            for (int j = 1; j < i; j++ ){
+                System.out.print("*");
+
+            }
+            System.out.println(" ");
         }
     }
 }
