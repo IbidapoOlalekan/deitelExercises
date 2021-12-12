@@ -30,13 +30,14 @@ public class Accts {
                 if (depositAmount <= 0.0){
                     depositAmount = 0;
                     this.balance  = balance;
+                    System.out.println("Deposit Cannot Be Negative");
                 }
               balance =   depositAmount +  balance;
                 this.balance = balance;
             }
 
             public double getBalance(){
-            return balance;
+                return balance;
             }
 
             public void setDay(int day){
@@ -69,12 +70,12 @@ public class Accts {
                 if (withdrawalAmount > balance){
                     System.out.println("Account balance Exceeded");
                     withdrawalAmount = 0;
-                    this.balance= balance;
                 }
-                if (withdrawalAmount < 0){
-                    withdrawalAmount = 0;
-                    this.balance = balance;
+                if (withdrawalAmount < 0.0) {
+                    System.out.println("Withdrawal Cannot Be Negative");
+                    withdrawalAmount = 0.0;
                 }
+
                 balance = balance - withdrawalAmount;
             }
 
