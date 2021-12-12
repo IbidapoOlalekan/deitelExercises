@@ -4,8 +4,16 @@ import java.util.Scanner;
 
 public class MonthSwitch {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+
         display("What Month?");
+        month();
+    }
+
+    public static void display(String message){
+        System.out.println(message);
+    }
+    public static void month(){
+        Scanner scan = new Scanner(System.in);
         String month = scan.next();
 
         switch (month){
@@ -28,9 +36,5 @@ public class MonthSwitch {
                 System.out.println("It have 30 days");
                 break;
         }
-    }
-
-    public static void display(String message){
-        System.out.println(message);
     }
 }
