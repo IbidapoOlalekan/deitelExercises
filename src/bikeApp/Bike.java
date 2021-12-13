@@ -1,5 +1,7 @@
 package bikeApp;
 
+import practiceDeitel.IfPractice;
+
 public class Bike {
     private String bikeName;
     private boolean isOn;
@@ -36,6 +38,7 @@ public class Bike {
 
     public int getSpeed(){
         if (speed < 0) return 0;
+
         return speed;
     }
 
@@ -52,11 +55,18 @@ public class Bike {
 
     }
     public int getGear() {
+        if (isOn)
         return gear;
+        return 0;
     }
+
+    @Override
+
     public String toString() {
         String bike = "";
-        bike =  bikeName;
+        bike +=  bikeName  + (isOn() ? "on" : "Off") + "\n";
+        bike += "Acceleration is" + getSpeed() + "\n";
+        bike += "Gear is " + getGear() + "\n";
         return bike;
     }
 }

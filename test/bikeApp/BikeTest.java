@@ -170,6 +170,28 @@ public class BikeTest {
         assertEquals(4,bike.getGear());
     }
 
+    @Test
+    public void checkGearWhenOffTest(){
+        Bike bike  = new Bike("Honda Bike");
+        bike.turnOff();
+        assertFalse(bike.isOn());
+        bike.setGear();
+        assertEquals(0,bike.getGear());
+    }
+
+    @Test
+    public void checkToStringTest(){
+        Bike bike = new Bike("Honda Bike");
+        bike.turnOn();
+        assertTrue(bike.isOn());
+        bike.accelerate(2);
+        assertEquals(2,bike.getSpeed());
+        bike.setGear();
+        assertEquals(1,bike.getGear());
+        bike.toString();
+        System.out.println(bike);
+    }
+
 
 
 
