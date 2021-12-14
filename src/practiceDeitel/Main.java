@@ -9,7 +9,6 @@ public class Main {
        SpeedConverter.display("Enter a number in km/hr : ");
         double userInput =scan.nextDouble();
        SpeedConverter.toMilesPerHour(userInput);
-       SpeedConverter.printConversion(userInput);
 
        MegaBytesConverter.printMegaBytesAndKiloBytes(1924);
 
@@ -19,5 +18,14 @@ public class Main {
         boolean leapYear = LeapYearCalculator.isLeapYear(1924);
         System.out.println(leapYear);
 
+        boolean equal = DecimalComparator.areEqualByThreeDecimalPlaces(3.176,3.175);
+        System.out.println(equal);
+
+        DecimalComparator.calcFeetAndInchesToCentimeters(10,1);
+
+       String time =  SecondsAndMinutes.getDurationString(61,00);
+        System.out.println(time);
+        String newTime = SecondsAndMinutes.getDurationString(3945L);
+        System.out.println(newTime);
     }
 }
