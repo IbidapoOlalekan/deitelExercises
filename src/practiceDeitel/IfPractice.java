@@ -1,5 +1,7 @@
 package practiceDeitel;
 
+import java.util.Scanner;
+
 public class IfPractice {
     public static void main(String[] args) {
         boolean gameOver = true;
@@ -34,6 +36,14 @@ public class IfPractice {
 
         position =  calculateHighScorePosition(1000);
         displayHighScorePosition("Cole",position);
+            display("******************************");
+        Scanner scanner = new Scanner(System.in);
+        display("Enter a number: ");
+        int userInput = scanner.nextInt();
+
+        reverse(userInput);
+
+
 
     }
 
@@ -68,5 +78,20 @@ public class IfPractice {
         return 4;
 
     }
+
+    public static void reverse(int number){
+        int reverse = 0;
+
+        int temp = number;
+        int remainder = 0;
+
+        while (temp > 0){
+            remainder = temp % 10;
+            reverse = reverse * 10 + remainder;
+            temp /= 10;
+        }
+        display("Reverse of" + number + " is " + reverse);
+    }
+
 
 }
