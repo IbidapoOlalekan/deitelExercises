@@ -11,5 +11,13 @@ public class Main {
        SpeedConverter.toMilesPerHour(userInput);
        SpeedConverter.printConversion(userInput);
 
+       MegaBytesConverter.printMegaBytesAndKiloBytes(1924);
+
+      boolean bark =  BarkingDog.shouldWakeUp(false,6);
+        System.out.println(bark);
+
+        boolean leapYear = LeapYearCalculator.isLeapYear(1924);
+        System.out.println(leapYear);
+
     }
 }
