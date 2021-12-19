@@ -1,9 +1,13 @@
 package practiceDeitel;
 
+import java.util.PrimitiveIterator;
+
 public class SecondsAndMinutes {
+    private static final String INVALID_VALUE_MESSAGE = "Invalid Value";
+
     public static String getDurationString(long minutes, long seconds){
       if ((minutes < 0) && (seconds < 0) || (seconds > 59) ){
-          return "Invalid Value ";
+          return INVALID_VALUE_MESSAGE;
       }
 
       long hours  = minutes / 60;
@@ -27,7 +31,7 @@ public class SecondsAndMinutes {
     }
     public static String getDurationString(long seconds){
         if (seconds  < 0){
-            return "Invalid Value";
+            return INVALID_VALUE_MESSAGE;
         }
 
         long minutes = seconds / 60;

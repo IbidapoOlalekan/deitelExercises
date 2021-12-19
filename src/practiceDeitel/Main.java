@@ -27,5 +27,9 @@ public class Main {
         System.out.println(time);
         String newTime = SecondsAndMinutes.getDurationString(3945L);
         System.out.println(newTime);
+        MinutesToYearsDaysCalculator.printYearsAndDays(525600);
+        IntEqualityPrinter.printEqual(1,1,3);
+       boolean go =  PlayingCat.isCatPlaying(false,35);
+        System.out.println(go);
     }
 }

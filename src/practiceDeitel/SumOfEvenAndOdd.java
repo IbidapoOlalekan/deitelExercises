@@ -10,7 +10,7 @@ public class SumOfEvenAndOdd {
         char choice;
 
         do {
-            display("Enter A Number : ");
+            print("Enter A Number : ");
             int userInput = scan.nextInt();
             if (userInput % 2 == 0){
                 evenSum += userInput;
@@ -18,18 +18,18 @@ public class SumOfEvenAndOdd {
             else {
                 oddSum += userInput;
             }
-            display("Do you want to continue y/n? ");
+            print("Do you want to continue y/n? ");
             choice = scan.next().charAt(0);
         }
         while (choice == 'y' || choice == 'Y');
-
-        display("The sum of Even Numbers is " + evenSum);
-        display("The sum of Odd Numbers is " + oddSum);
+        System.out.println();
+        print("The sum of Even Numbers is " + evenSum);
+        print("The sum of Odd Numbers is " + oddSum);
 
 
     }
 
-    public static void display(String message){
+    public static void print(String message){
         System.out.println(message);
     }
 
