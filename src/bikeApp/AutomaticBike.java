@@ -6,21 +6,19 @@ public class AutomaticBike {
     public static void main(String[] args) {
         Scanner scan =  new Scanner(System.in);
         onPrompt();
-        int onPrompt = 0;
+        int onPrompt;
         Bike hondaBike = new Bike("Honda Bike");
 
         do {
             onPrompt();
             onPrompt = scan.nextInt();
-            switch (onPrompt){
-                case 1:
+            switch (onPrompt) {
+                case 1 -> {
                     scan.nextLine();
                     System.out.println("The Bike Is On");
                     hondaBike.turnOn();
                     boolean on = hondaBike.isOn();
-                    System.out.println(hondaBike.isOn());
-
-
+                    System.out.println(on);
                     int newBikePromptResponse;
                     do {
                         String newBikePrompt = """
@@ -29,7 +27,7 @@ public class AutomaticBike {
                                 """;
                         System.out.println(newBikePrompt);
                         newBikePromptResponse = scan.nextInt();
-                        switch (newBikePromptResponse){
+                        switch (newBikePromptResponse) {
                             case 1:
 
                                 System.out.println("Set The Gear: ");
@@ -46,8 +44,8 @@ public class AutomaticBike {
 
                             case 2:
                                 System.out.println("Set the Gear: ");
-                                 gear = scan.nextInt();
-                                 hondaBike.decelerate(gear);
+                                gear = scan.nextInt();
+                                hondaBike.decelerate(gear);
                                 System.out.println("Decelerating");
                                 System.out.println("Bike Speed is" + hondaBike.getSpeed());
                                 hondaBike.setGear();
@@ -60,14 +58,13 @@ public class AutomaticBike {
                         }
                     }
                     while (true);
-
-                case 2:
-                    System.exit(0);
-                default:
-
+                }
+                case 2 -> System.exit(0);
+                default -> {
+                }
             }
         }
-        while (onPrompt != 1 && onPrompt!=2);
+        while (true);
 
 
     }
