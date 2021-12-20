@@ -52,6 +52,7 @@ public class AutomaticBike {
                                 System.out.println("Bike Speed is" + hondaBike.getSpeed());
                                 hondaBike.setGear();
                                 gear = hondaBike.getGear();
+                                System.out.println("The gear is " + gear);
 
 
                                 break;
