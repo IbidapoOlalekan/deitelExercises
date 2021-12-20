@@ -1,5 +1,7 @@
 package kata;
 
+import chapterSeven.Array;
+
 public class Kata {
 
     public static int calculateTotalOf(int[] numbers) {
@@ -48,5 +50,21 @@ public class Kata {
         else if (score >= 60) return 'D';
         else if (score >= 50) return 'E';
         else return 'F';
+    }
+    public static void displayArray(int[][] array){
+        for (int counter = 0; counter < array.length; counter++){
+            for (int j = 0; j < array[counter].length; j++){
+                System.out.print(array[counter][j] + "\t");
+            }
+            System.out.println(" ");
+        }
+    }
+    public static void displayArray(String[][] array){
+        for (int counter = 0; counter < array.length; counter++){
+            for (int j = 0; j < array[counter].length; j++){
+                System.out.print(array[counter][j] + "\t");
+            }
+            System.out.println(" ");
+        }
     }
 }

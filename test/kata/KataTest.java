@@ -1,8 +1,9 @@
 package kata;
 
-import org.junit.jupiter.api.Assertions;
+
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class KataTest {
@@ -119,4 +120,6 @@ public class KataTest {
         double average = Kata.calculateAverageOf(numbers);
         assertEquals(3,average);
     }
+
+
 }
