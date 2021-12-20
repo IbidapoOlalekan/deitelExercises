@@ -7,11 +7,11 @@ public class SpeedConverter {
 
    }
 
-   public static void printConversion(double kilometerPerHour){
-       if (kilometerPerHour < 0)display("Invalid Value");
+   public static String printConversion(double kilometerPerHour){
+       if (kilometerPerHour < 0) return  "Invalid Value";
        else {
            long milesPerHour = toMilesPerHour(kilometerPerHour);
-           display(kilometerPerHour + "Km/h = " + milesPerHour + "mi/h");
+           return  kilometerPerHour + " Km/h = " + milesPerHour + " mi/h ";
        }
 
    }
@@ -20,7 +20,4 @@ public class SpeedConverter {
        System.out.println(message);
    }
 
-   public static void display(long message){
-       System.out.println(message);
-   }
 }

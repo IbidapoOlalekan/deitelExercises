@@ -26,7 +26,7 @@ public class SecondsAndMinutes {
         if (seconds < 10){
             secondsString = "0" + secondsString;
         }
-      return hoursString +  minutesString +  secondsString + "   ";
+      return hoursString +  minutesString +  secondsString;
 
     }
     public static String getDurationString(long seconds){

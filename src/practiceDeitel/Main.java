@@ -9,6 +9,8 @@ public class Main {
        SpeedConverter.display("Enter a number in km/hr : ");
         double userInput =scan.nextDouble();
        SpeedConverter.toMilesPerHour(userInput);
+      String ans =  SpeedConverter.printConversion(userInput);
+        System.out.println(ans);
 
        MegaBytesConverter.printMegaBytesAndKiloBytes(1924);
 
@@ -27,7 +29,9 @@ public class Main {
         System.out.println(time);
         String newTime = SecondsAndMinutes.getDurationString(3945L);
         System.out.println(newTime);
-        MinutesToYearsDaysCalculator.printYearsAndDays(525600);
+       String min =  MinutesToYearsDaysCalculator.printYearsAndDays(525600);
+        System.out.println(min);
+
         IntEqualityPrinter.printEqual(1,1,3);
        boolean go =  PlayingCat.isCatPlaying(false,35);
         System.out.println(go);

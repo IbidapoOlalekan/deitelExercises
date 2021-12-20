@@ -25,4 +25,11 @@ public class BarkingDogTest {
         boolean wake = BarkingDog.shouldWakeUp(false,2);
         assertFalse(wake);
     }
+    @Test
+    public void shouldNotWakeUpIfDogBarkIfHourLessThanZeroAndGreaterThanTwentyThreeTest(){
+        boolean wake = BarkingDog.shouldWakeUp(true,-1);
+        assertFalse(wake);
+        boolean wakeT = BarkingDog.shouldWakeUp(true,25);
+        assertFalse(wakeT);
+    }
 }

@@ -6,7 +6,7 @@ public class AreaCalculator {
         return -1;
         }
         else {
-            return radius *radius * Math.PI;
+            return Math.round(radius *radius * Math.PI);
         }
 
     }
