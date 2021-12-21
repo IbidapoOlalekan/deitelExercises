@@ -6,56 +6,53 @@ public class AirConditionerRemote {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         displayOnPrompt();
-        int response = 0;
+        int response ;
         AirConditioner samsungAirConditioner = new AirConditioner("Samsung Air Conditioner");
 
         do {
             displayOnPrompt();
             response = scan.nextInt();
-            switch (response){
-                case 1:
+            switch (response) {
+                case 1 -> {
                     samsungAirConditioner.turnOn();
                     System.out.println("Air Conditioner Is Powered On!!!!!!");
                     int function;
                     do {
                         functionPrompt();
                         function = scan.nextInt();
-                        switch (function){
-                            case 1:
+                        switch (function) {
+                            case 1 -> {
                                 display("Increasing Temperature");
                                 samsungAirConditioner.increaseTemperature();
                                 display(" ");
                                 display("The temperature is " + samsungAirConditioner.getTemperature());
-                                break;
-                            case 2:
+                            }
+                            case 2 -> {
                                 display("Decreasing Temperature");
                                 samsungAirConditioner.decreaseTemperature();
                                 display(" ");
                                 display("The temperature is " + samsungAirConditioner.getTemperature());
-                                break;
-                            case 3:
-                                display("Fan!!!!!!!");
-                                break;
-                            case 4:
-                                display("Swing!!!!!!");
-                                break;
-                            case 5:
+                            }
+                            case 3 -> display("Fan!!!!!!!");
+                            case 4 -> display("Swing!!!!!!");
+                            case 5 -> {
                                 display("Powering Off");
                                 samsungAirConditioner.turnOff();
                                 System.exit(0);
+                            }
                         }
 
                     }
                     while (true);
-
-
-                case 2:
+                }
+                case 2 -> {
                     display("Power Off");
                     samsungAirConditioner.turnOff();
                     System.exit(0);
+                }
             }
         }
-        while (response != 1);
+        while (true);
 
     }
 
