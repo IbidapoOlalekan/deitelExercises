@@ -39,6 +39,11 @@ public class MyAccount {
 
 
     public void setPin(String pin) {
+        this.pin = pin;
+        if (pin != pin){
+            System.out.println("Incorrect Pin");
+        }
+
         this.balance = balance;
     }
 }

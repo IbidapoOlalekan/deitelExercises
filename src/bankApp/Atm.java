@@ -20,7 +20,9 @@ public class Atm {
                    String name = scanner.nextLine();
                    System.out.println("Oya give me your needle");
                    String pin = scanner.nextLine();
+
                    userAccount = new MyAccount(name,pin);
+                   userAccount.setPin(pin);
                    System.out.println("\n\n\n We don create am!!!");
                    int newAccountPromptResponse;
 
@@ -46,15 +48,16 @@ public class Atm {
                            case 2:
                                System.out.println("Oya how much you wan collect from ya account");
                                int amountToWithdraw = scanner.nextInt();
+
                                scanner.nextLine();
                                System.out.println("Oya Enter the needle you set before");
                                String providePin = scanner.nextLine();
-
+                               userAccount.withdraw(providePin,amountToWithdraw);
                                System.out.println("\n\n\n Oya we don collect ya moni");
                                //todo implement withdraw
                                break;
                            case 3:
-                               //scanner.nextLine();
+                               scanner.nextLine();
                                System.out.println("Oya wetin be your pin");
                                String checkBalancePin = scanner.nextLine();
                                System.out.println("Ya Account Balance " + userAccount.getBalance(checkBalancePin));
