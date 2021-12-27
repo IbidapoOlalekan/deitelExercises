@@ -1,6 +1,7 @@
 package chapterThree;
 
 import java.security.PublicKey;
+import java.util.IllegalFormatCodePointException;
 
 public class Clock {
     private int hour;
@@ -59,6 +60,11 @@ public class Clock {
     }
 
     public int getHour() {
+
+        if (hour < 10){
+
+            return hour;
+        }
         return hour;
     }
 
