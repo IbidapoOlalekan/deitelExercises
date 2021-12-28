@@ -48,6 +48,7 @@ public class Main {
         }
         int total = SumOddRange.sumOdd(1,100);
         System.out.println(total);
-
+       int result  =  LargestPrime.getLargestPrime(21);
+        System.out.println(result);
     }
 }
