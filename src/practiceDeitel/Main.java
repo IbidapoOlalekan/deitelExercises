@@ -50,5 +50,7 @@ public class Main {
         System.out.println(total);
        int result  =  LargestPrime.getLargestPrime(21);
         System.out.println(result);
+
+        InputCalculator.inputThenPrintSumAndAverage();
     }
 }

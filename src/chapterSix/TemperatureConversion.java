@@ -6,7 +6,6 @@ public class TemperatureConversion {
         System.out.println(celsius);
 
        double fahrenheit = fahrenheit(-5);
-
         System.out.println(fahrenheit);
     }
 
