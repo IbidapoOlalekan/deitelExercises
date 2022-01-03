@@ -51,6 +51,11 @@ public class Main {
        int result  =  LargestPrime.getLargestPrime(21);
         System.out.println(result);
 
+        System.out.println(Math.ceil(4.76));
         InputCalculator.inputThenPrintSumAndAverage();
+
+       int answer =  PaintJob.getBucketCount(2.75,3.25,2.5,1);
+        System.out.println(answer);
+
     }
 }
