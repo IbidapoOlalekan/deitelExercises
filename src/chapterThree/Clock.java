@@ -9,24 +9,19 @@ public class Clock {
     private int second;
 
     public Clock(int hour, int minute, int second){
-        if (hour > 23){
-            hour = 0;
-            minute = 0;
-            second = 0;
+        if (hour > 23 || hour < 0){
+            throw new IllegalArgumentException("Hour must be 0 - 23");
+
         }
         this.hour = hour;
 
-        if (minute > 59){
-            hour = 0;
-            minute = 0;
-            second = 0;
+        if (minute < 0 ||minute >= 59){
+           throw new IllegalArgumentException("Minute must be 0 - 59");
         }
         this.minute = minute;
 
-        if (second > 59){
-            hour = 0;
-            minute = 0;
-            second = 0;
+        if (second < 0 ||second > 59){
+           throw  new IllegalArgumentException("Seconds must be 0 - 59");
         }
         this.second = second;
 
@@ -77,7 +72,7 @@ public class Clock {
     }
 
     public void displayTime(){
-        System.out.printf("%d : %d : %d",getHour(),getMinute(),getSecond());
+        System.out.printf("%02d : %02d : %02d",getHour(),getMinute(),getSecond());
 
     }
 }
