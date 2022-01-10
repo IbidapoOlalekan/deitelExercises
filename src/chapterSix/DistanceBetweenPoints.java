@@ -18,8 +18,7 @@ public class DistanceBetweenPoints {
     }
 
     public static double distance(double pointOne, double pointTwo){
-        double distance  = pointTwo - pointOne;
-        return distance;
+        return pointTwo - pointOne;
     }
 
     public static void print(String message){
