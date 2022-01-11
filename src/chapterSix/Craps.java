@@ -1,6 +1,7 @@
-package practiceDeitel;
+package chapterSix;
 
 import jdk.swing.interop.SwingInterOpUtils;
+import practiceDeitel.Status;
 
 import java.security.SecureRandom;
 
