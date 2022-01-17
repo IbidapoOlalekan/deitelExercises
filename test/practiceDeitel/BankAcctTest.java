@@ -53,4 +53,48 @@ public class BankAcctTest {
         bankAcct.setPhoneNumber(phoneNumber);
         assertEquals(null,bankAcct.getPhoneNumber());
     }
+
+    @Test
+    public void depositCanBeMade(){
+        double depositAmount= 20000;
+        bankAcct.deposit(depositAmount);
+        assertEquals(bankAcct.getBalance(),depositAmount);
+    }
+    @Test
+    public void zeroOrNegativeAmountCannotBeDeposited(){
+        double depositAmount = -1000;
+        bankAcct.deposit(depositAmount);
+        assertEquals(bankAcct.getBalance(),0);
+    }
+
+    @Test
+    public void withdrawalCanBeMade(){
+        double depositAmount = 10000;
+        bankAcct.deposit(depositAmount);
+        assertEquals(bankAcct.getBalance(),depositAmount);
+        double withdrawalAmount = 1000;
+        bankAcct.withdrawal(withdrawalAmount);
+        assertEquals(bankAcct.getBalance(),9000);
+    }
+
+    @Test
+    public void withdrawalCannotBeMadeIfWithdrawalAmountExceedAccountBalance(){
+        double depositAmount = 100000;
+        bankAcct.deposit(depositAmount);
+        assertEquals(bankAcct.getBalance(),depositAmount);
+        double withdrawalAmount = 1000000;
+        bankAcct.withdrawal(withdrawalAmount);
+        assertEquals(depositAmount,bankAcct.getBalance());
+    }
+    @Test
+    public void withdrawalAmountCannotBeLessThanZero(){
+        double depositAmount = 1000;
+        bankAcct.deposit(depositAmount);
+        assertEquals(bankAcct.getBalance(),depositAmount);
+        double withdrawalAmount = -10;
+        bankAcct.withdrawal(withdrawalAmount);
+        assertEquals(depositAmount,bankAcct.getBalance());
+    }
+
+
 }

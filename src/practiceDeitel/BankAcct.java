@@ -1,6 +1,5 @@
 package practiceDeitel;
 
-import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,12 +11,18 @@ public class BankAcct {
     private String phoneNumber;
 
     public  void deposit(double depositAmount){
-        balance = depositAmount + balance;
-        String.format("You deposited %.2f to %s account",depositAmount,getCustomerName());
+        if (depositAmount > 0){
+            balance = depositAmount + balance;
+            String.format("You deposited %.2f to %s account",depositAmount,getCustomerName());
+        }
+        else {
+            this.balance = balance;
+            String.format("Deposit Amount cannot be negative");
+        }
     }
 
     public void withdrawal(double withdrawalAmount){
-        if (withdrawalAmount > balance){
+        if (withdrawalAmount > balance || withdrawalAmount < 0){
             withdrawalAmount = 0;
             this.balance = balance;
             System.out.println("Insufficient Funds!");
@@ -77,6 +82,6 @@ public class BankAcct {
         Pattern pattern = Pattern.compile("(0/91)?[7-9][0-9]{9}");
         Matcher match = pattern.matcher(str);
 
-        return (match.find()&&match.group().equals(str));
+        return (match.find() && match.group().equals(str));
     }
 }
