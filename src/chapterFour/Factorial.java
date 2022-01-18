@@ -1,7 +1,11 @@
 package chapterFour;
 
+import java.util.Scanner;
+
 public class Factorial {
+    private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
+
       int result =  factorialOf(5);
       double results = doubleFactorial(4);
         System.out.println(results);
@@ -9,12 +13,12 @@ public class Factorial {
     }
     public static int factorialOf(int number){
         if (number >= 0) {
-            int product = 1;
+            int factorial = 1;
             for (int count = 0; number > count; number--) {
-                product *= number;
+                factorial *= number;
             }
 
-            return product;
+            return factorial;
         }
         else {
             return -1;
