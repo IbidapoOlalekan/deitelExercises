@@ -6,7 +6,7 @@ public class CompoundInterest {
         double principal = 1000.0;
         double rate;
 
-        System.out.printf("%s %n", "Year", "Amount on deposit");
+        System.out.printf("%s \t%10s%n", "Year", "Amount on deposit");
         int count = 0;
         for (rate = 0.05; count <= 5  ; rate+=0.01 ){
             System.out.printf("At Interest Rate Of %.2f\n",  rate);

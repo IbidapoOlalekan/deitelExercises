@@ -4,67 +4,78 @@ import javax.security.sasl.SaslClient;
 import java.util.Scanner;
 
 public class NegativePositiveAndZeroValues {
+    private static final Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int numOne = scan.nextInt();
-        int numTwo = scan.nextInt();
-        int numThree = scan.nextInt();
-        int numFour = scan.nextInt();
-        int numFive = scan.nextInt();
+
+        int numberOne = input("Enter A Number: ");
+        int numberTwo = input("Enter A Number: ");
+        int numberThree = input("Enter A Number: ");
+        int numberFour = input("Enter A Number: ");
+        int numberFive = input("Enter A Number: ");
         int count = 0;
         int counts = 0;
         int counter = 0;
 
-        if(numOne < 0){
+        boolean numberOneIsLessThanZero = numberOne < 0;
+        boolean numberTwoIsLessThanZero = numberTwo < 0;
+        boolean numberThreeIsLessThanZero = numberThree < 0;
+        boolean numberFourIsLessThanZero = numberFour < 0;
+        boolean numberFiveIsLessThanZero = numberFive < 0;
+        if(numberOneIsLessThanZero){
             count ++;
         }
-        if(numTwo < 0){
+        else if(numberTwoIsLessThanZero){
             count++;
         }
-        if (numThree < 0){
+        else if (numberThreeIsLessThanZero){
             count ++;
         }
-        if (numFour < 0){
+        else if (numberFourIsLessThanZero){
             count++;
         }
-        if(numFive < 0){
+        else if(numberFiveIsLessThanZero){
             count++;
         }
 
         System.out.println("The number of negative values is " + count);
-        if(numOne > 0){
+        if(numberOne > 0){
             counts ++;
         }
-        if(numTwo > 0){
+        if(numberTwo > 0){
             counts++;
         }
-        if (numThree > 0){
+        if (numberThree > 0){
             counts ++;
         }
-        if (numFour > 0){
+        if (numberFour > 0){
             counts++;
         }
-        if(numFive > 0){
+        if(numberFive > 0){
             counts++;
         }
 
         System.out.println("The number of positive values is " + counts);
-        if(numOne == 0){
+        if(numberOne == 0){
             counter ++;
         }
-        if(numTwo == 0){
+        if(numberTwo == 0){
             counter++;
         }
-        if (numThree == 0){
+        if (numberThree == 0){
             counter ++;
         }
-        if (numFour == 0){
+        if (numberFour == 0){
             counter++;
         }
-        if(numFive == 0){
+        if(numberFive == 0){
             counter++;
         }
         System.out.printf("The number of zeros input are %d", counter);
+    }
+
+    public static int input(String message){
+        System.out.println(message);
+        return scan.nextInt();
     }
 
 }

@@ -5,30 +5,25 @@ import java.util.Scanner;
 public class ArithmeticSmallest {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-
-
         int num;
-
         int maximum;
         int minimum;
-
-
         int count = 1;
-
-
-        askForNumber();
+        askForANumber();
         num = scan.nextInt();
         maximum = num;
         minimum = num;
         while (count < 3) {
-            askForNumber();
+            askForANumber();
             num = scan.nextInt();
             count++;
-            if (maximum < num) {
+            boolean isMaximum = maximum < num;
+            if (isMaximum) {
                 maximum = num;
 
             }
-           if (minimum > num){
+            boolean isMinimum = minimum > num;
+           if (isMinimum){
                minimum = num;
            }
 
@@ -38,7 +33,7 @@ public class ArithmeticSmallest {
         System.out.printf("The smallest number is %d%n",minimum);
          }
 
-    public static  void askForNumber(){
+    public static  void askForANumber(){
          System.out.println("Enter A Number: ");
     }
 }

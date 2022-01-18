@@ -10,7 +10,7 @@ public class SmallestValue {
         display("Number Of Values: ");
         int values = scanner.nextInt();
         for (int i = 1; i <= values; i++){
-            System.out.println("Enter a number: ");
+            display("Enter a number: ");
             int number = scanner.nextInt();
             minimum = minimumValueOf(number);
         }

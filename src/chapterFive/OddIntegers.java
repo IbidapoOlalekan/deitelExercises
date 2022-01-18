@@ -6,12 +6,19 @@ public class OddIntegers {
         for (int i = 0; i < 16; i++){
             if (i % 2 != 0){
 
-                System.out.println(i);
+                display(i);
                 product*=i;
             }
         }
-        System.out.println(product);
+        display(product);
 
 
+    }
+
+    public static void display(String message){
+        System.out.println(message);
+    }
+    public static void display(int message){
+        System.out.println(message);
     }
 }

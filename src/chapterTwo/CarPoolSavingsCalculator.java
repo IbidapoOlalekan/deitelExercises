@@ -3,25 +3,30 @@ package chapterTwo;
 import java.util.Scanner;
 
 public class CarPoolSavingsCalculator {
+    private static  Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter total miles driven per day");
-        double milesDriven= scan.nextDouble();
+        ;
+        double milesDriven= input("Enter total miles driven per day: ");
 
-        System.out.println("Enter cost per gallon of gasoline");
-        double costOfGasoline= scan.nextDouble();
+        double costOfGasoline= input("Enter cost per gallon of gasoline: ");
 
-        System.out.println("Enter average miles per gallon");
-        double averageMilesPerGallon= scan.nextDouble();
+        double averageMilesPerGallon= input("Enter average miles per gallon: ");
 
-        System.out.println("Enter parking fee per day");
-        double parkingFeePerDay= scan.nextDouble();
+        double parkingFeePerDay= input("Enter parking fee per Day: ");
 
-        System.out.println("Enter tolls per day");
-        double tollsPerDay= scan.nextDouble();
+        double tollsPerDay= input("Enter tolls per day: ");
 
         double dailyDrivingCost = ((milesDriven / averageMilesPerGallon) * costOfGasoline) + parkingFeePerDay + tollsPerDay;
 
         System.out.printf("Daily driving cost is %.2f%n", dailyDrivingCost);
+    }
+
+    public static double input(String message){
+        System.out.println(message);
+        return scan.nextDouble();
+    }
+
+    public static String display(String message){
+        return String.format(message);
     }
 }

@@ -4,12 +4,13 @@ import javax.swing.plaf.IconUIResource;
 import java.util.Scanner;
 
 public class BarChartPrinting {
+    private static   Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+
         int count = 1;
         int userInput;
         do {
-            System.out.println("Enter A Number: ");
+            display("Enter A Number: ");
             userInput = scanner.nextInt();
             displayBar(userInput);
 
@@ -24,10 +25,16 @@ public class BarChartPrinting {
                 System.out.print("*");
 
             }
-            System.out.println();
+            display("");
         }
         else
-            System.out.println("Invalid Number Of Figures");
+            display ("Invalid Number Of Figures");
+
 
     }
+
+    public static void display(String message){
+        System.out.println(message);
+    }
+
 }

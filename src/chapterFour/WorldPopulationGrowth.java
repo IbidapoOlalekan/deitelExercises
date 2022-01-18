@@ -13,7 +13,7 @@ public class WorldPopulationGrowth {
             year++;
            increase =  futurePopulation - populationOfTheWorld;
 
-            System.out.printf("%d \t\t\t %.2f \t\t\t \t%.2f\n", year, futurePopulation, increase);
+            System.out.printf("%d \t\t\t %8.2f \t\t\t \t%.2f\n", year, futurePopulation, increase);
         }
 
     }

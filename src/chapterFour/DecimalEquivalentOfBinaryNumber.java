@@ -31,4 +31,5 @@ public class DecimalEquivalentOfBinaryNumber {
     public static void display(String message){
         System.out.println(message);
     }
+
 }

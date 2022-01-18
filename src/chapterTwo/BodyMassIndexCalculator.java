@@ -3,27 +3,38 @@ package chapterTwo;
 import java.util.Scanner;
 
 public class BodyMassIndexCalculator {
+    private static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter the user weight in Kilograms");
-        double weightInKilograms = scan.nextDouble();
 
-        System.out.println("Enter the user height in meters");
-        double heightInMeters = scan.nextDouble();
+        double weightInKilograms = input("Enter the user weight in Kilograms: ");
+
+        double heightInMeters = input("Enter the user height in meters");
 
         double BMI = weightInKilograms / (heightInMeters * heightInMeters);
 
-        if (BMI < 18.5){
-            System.out.println("Underweight");
+        boolean bmiIsUnderWeight = BMI < 18.5;
+        boolean bmiIsNormal = BMI >= 18.5 & BMI <=24.9;
+        boolean bmiIsOverWeight = BMI >= 25 & BMI <= 29.9;
+        if (bmiIsUnderWeight){
+            display("Underweight");
         }
-        else if(BMI >= 18.5 & BMI <=24.9){
-            System.out.println("Normal!!!!!");
+        else if(bmiIsNormal){
+           display("Normal!!!!!");
         }
-        else if(BMI >= 25 & BMI <= 29.9){
-            System.out.println("Overweight!!!!!");
+        else if(bmiIsOverWeight){
+            display("Overweight!!!!!");
         }
         else{
-            System.out.println("Obese!!!!!!!!");
+            display("Obese!!!!!!!!");
         }
     }
+
+    public static double input(String message){
+        System.out.println(message);
+        return scan.nextDouble();
+    }
+    public static void display(String message){
+        System.out.println(message);
+    }
+
 }
