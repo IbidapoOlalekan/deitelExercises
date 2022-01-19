@@ -72,8 +72,8 @@ public class SevenSegmentDisplay {
     }
     public void sideB(){
         segments[0][3] = 1;
-        segments[1][3]=1;
-        segments[2][3]= 1;
+        segments[1][3] = 1;
+        segments[2][3] = 1;
     }
     public void sideC(){
         segments[2][3] =1;

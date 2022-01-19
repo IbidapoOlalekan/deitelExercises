@@ -16,7 +16,6 @@ public class Exponentiation {
     }
 
     public static String display(String message){
-
         System.out.println(message);
         return message;
     }

@@ -37,7 +37,7 @@ public class NegativePositiveAndZeroValues {
             count++;
         }
 
-        System.out.println("The number of negative values is " + count);
+        display("The number of negative values is " + count);
         if(numberOne > 0){
             counts ++;
         }
@@ -54,7 +54,7 @@ public class NegativePositiveAndZeroValues {
             counts++;
         }
 
-        System.out.println("The number of positive values is " + counts);
+        display("The number of positive values is " + counts);
         if(numberOne == 0){
             counter ++;
         }
@@ -77,5 +77,11 @@ public class NegativePositiveAndZeroValues {
         System.out.println(message);
         return scan.nextInt();
     }
+
+    public static String display(String message){
+        System.out.println(message);
+        return message;
+    }
+
 
 }

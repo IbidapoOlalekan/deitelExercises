@@ -3,16 +3,26 @@ package chapterTwo;
 import java.util.Scanner;
 
 public class OddOrEven {
+    private static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter a number:  ");
-        int number = scan.nextInt();
+
+        int number = input("Enter a message:  ");
 
         if(number % 2 == 0){
-            System.out.println("The number is even");
+            display("The number is even");
         }
         else {
-            System.out.println("The number is odd");
+            display("The number is odd");
         }
+    }
+
+    public static int input(String message){
+        display(message);
+        return scan.nextInt();
+    }
+
+    public static String display(String message){
+        System.out.println(message);
+        return message;
     }
 }

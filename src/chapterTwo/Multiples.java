@@ -16,12 +16,17 @@ public class Multiples {
             System.out.printf("%d is a multiple of %d",numberOne,numberTwo);
         }
         else
-            System.out.println("It is not a multiple!!!!");
+            display("It is not a multiple!!!!");
     }
 
     public static int input(String message){
         System.out.println(message);
         return scanner.nextInt();
     }
+    public static String display(String message){
+        System.out.println(message);
+        return message;
+    }
+
 
 }

@@ -12,8 +12,9 @@ public class CheckerBoard {
         display(" * * * * * * * *");
     }
 
-    public static void display(String message){
+    public static String  display(String message){
         System.out.println(message);
+        return message;
     }
 
 }

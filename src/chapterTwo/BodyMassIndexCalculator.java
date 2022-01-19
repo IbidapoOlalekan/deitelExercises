@@ -33,8 +33,9 @@ public class BodyMassIndexCalculator {
         System.out.println(message);
         return scan.nextDouble();
     }
-    public static void display(String message){
+    public static String display(String message){
         System.out.println(message);
+        return message;
     }
 
 }
