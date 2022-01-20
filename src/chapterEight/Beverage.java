@@ -40,7 +40,7 @@ public class Beverage {
     }
 
     public Beverage(int milkQty){
-        this.milkQty = milkQty;
+        this(0,milkQty);
     }
 
     public Beverage(int cocoaQty, int milkQty){
