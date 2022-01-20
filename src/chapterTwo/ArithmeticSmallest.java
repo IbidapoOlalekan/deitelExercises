@@ -36,4 +36,7 @@ public class ArithmeticSmallest {
     public static  void askForANumber(){
          System.out.println("Enter A Number: ");
     }
+    public static String display(String message){
+        return message;
+    }
 }

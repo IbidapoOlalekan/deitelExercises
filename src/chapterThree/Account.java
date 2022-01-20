@@ -33,7 +33,7 @@ public class Account {
         }
         else
         {
-            System.out.println("Withdrawal amount exceeded account balance");
+            display("Withdrawal amount exceeded account balance");
         }
     }
     public Account(String name, double balance){
@@ -47,4 +47,5 @@ public class Account {
         return balance;
     }
 
+    public static String display(String message){return message;}
 }

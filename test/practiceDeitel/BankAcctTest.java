@@ -7,6 +7,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BankAcctTest {
     BankAcct bankAcct = new BankAcct();
     @Test
+    public void accountCanBeCreatedWithCustomerAndPhoneNumberTest(){
+        BankAcct judithAccount = new BankAcct("Judith","08032456799");
+        assertEquals("Judith",judithAccount.getCustomerName());
+        assertEquals("08032456799",judithAccount.getPhoneNumber());
+        judithAccount.toString();
+
+    }
+
+    @Test
+    public void accountCanBeCreatedWithAllRequiredFieldsTest(){
+        BankAcct jacinthAccount = new BankAcct("Jacintha","08052344500","0254736456");
+        assertEquals("Jacintha", jacinthAccount.getCustomerName());
+        assertEquals("08052344500", jacinthAccount.getPhoneNumber());
+        assertEquals("0254736456",jacinthAccount.getAccountNumber());
+    }
+    @Test
     public void accountNumberCanBeGivenToAUser(){
         String accountNumber = "0254836708";
         bankAcct.setAccountNumber(accountNumber);
@@ -25,6 +41,13 @@ public class BankAcctTest {
         bankAcct.setCustomerName(accountName);
         assertEquals(accountName,bankAcct.getCustomerName());
     }
+    @Test
+    public void aWrongEmailCannotBeUsedToRegisterAnAccountTest(){
+        String accountEmail  = "@gmail.com";
+        bankAcct.setEmail(accountEmail);
+        assertEquals(accountEmail,bankAcct.getEmail());
+    }
+
     @Test
     public void accountEmailCanBeRegistered(){
         String accountEmail = "ibidapoazeez @ gmail.com";

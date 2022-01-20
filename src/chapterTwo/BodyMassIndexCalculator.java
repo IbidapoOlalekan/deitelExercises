@@ -8,7 +8,14 @@ public class BodyMassIndexCalculator {
 
         double weightInKilograms = input("Enter the user weight in Kilograms: ");
 
+        try {
+            validate(weightInKilograms);
+        }
+        catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
         double heightInMeters = input("Enter the user height in meters");
+        if (validate(heightInMeters));
 
         double BMI = weightInKilograms / (heightInMeters * heightInMeters);
 
@@ -29,10 +36,24 @@ public class BodyMassIndexCalculator {
         }
     }
 
+    private static boolean validate(double weightInKilograms) {
+        if (weightInKilograms > 0){
+            return true;
+        }
+        else {
+
+            throw new IllegalArgumentException("Weight Cannot Be Negative");
+
+        }
+
+    }
+
     public static double input(String message){
         System.out.println(message);
         return scan.nextDouble();
     }
+
+
     public static String display(String message){
         System.out.println(message);
         return message;
