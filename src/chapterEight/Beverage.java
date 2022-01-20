@@ -33,10 +33,19 @@ public class Beverage {
     this.sugarQty = 5;
     }
 
-    private Beverage(int cocoaQty, int milkQty, int sugarQty){
+    public Beverage(int cocoaQty, int sugarQty, int milkQty){
         this.cocoaQty = milkQty;
         this.sugarQty = sugarQty * 2;
         this.milkQty = cocoaQty;
+    }
+
+    public Beverage(int milkQty){
+        this.milkQty = milkQty;
+    }
+
+    public Beverage(int cocoaQty, int milkQty){
+        this.cocoaQty = cocoaQty;
+        this.milkQty = milkQty;
     }
 
 
