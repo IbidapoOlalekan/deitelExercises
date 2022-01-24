@@ -1,6 +1,7 @@
 package practiceDeitel;
 
 import org.junit.jupiter.api.Test;
+import practiceDeitel.ComplexNumberCode.ComplexNumber;
 
 public class ComplexNumberTest {
     @Test

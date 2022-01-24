@@ -1,4 +1,4 @@
-package practiceDeitel;
+package practiceDeitel.ComplexNumberCode;
 
 public class ComplexNumber {
     private double real;
