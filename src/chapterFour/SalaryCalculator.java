@@ -3,12 +3,11 @@ package chapterFour;
 import java.util.Scanner;
 
 public class SalaryCalculator {
+
+    private static final Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
-        // Get the employee details
-        //
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter the employee name: ");
-        String name = scan.nextLine();
+
+        String name = input("Enter the employee name: ");
         System.out.println("Enter the hours : ");
         int hours = scan.nextInt();
         System.out.println("Enter the hourly rate: ");
@@ -27,4 +26,14 @@ public class SalaryCalculator {
             }
 
     }
+
+    public static void display(String message){
+        System.out.println(message);
+    }
+    public static String input(String message){
+        System.out.println(message);
+        return scan.nextLine();
+    }
+
+
 }

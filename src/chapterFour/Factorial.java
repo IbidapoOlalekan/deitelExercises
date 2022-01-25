@@ -3,7 +3,7 @@ package chapterFour;
 import java.util.Scanner;
 
 public class Factorial {
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
 
       int result =  factorialOf(5);
@@ -34,10 +34,10 @@ public class Factorial {
         else if (number == 1){
             return 1;
         }
-        else if (number > 1){
+        else {
             return number * doubleFactorial(number - 1);
         }
-        return 0;
+
     }
 
 }

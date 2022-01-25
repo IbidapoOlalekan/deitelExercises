@@ -3,10 +3,10 @@ package chapterFour;
 import java.util.Scanner;
 
 public class PrivacyWithCryptography {
+    private static final Scanner scan  = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner scan  = new Scanner(System.in);
-        display("Enter a four digit number: ");
-        int data = scan.nextInt();
+
+        int data = input("Enter a four digit number: ");
       String encryptedData =  encrypt(data);
 
         display(encryptedData);
@@ -18,7 +18,7 @@ public class PrivacyWithCryptography {
 
         int thirdDigit  = (data % 100)/10;
 
-        int fourthDigit = (data % 10)/1;
+        int fourthDigit = (data % 10);
 
         firstDigit = (firstDigit + 7)%10;
 
@@ -33,5 +33,10 @@ public class PrivacyWithCryptography {
 
     public static void display(String message){
         System.out.println(message);
+    }
+
+    public static int input(String message){
+        System.out.println(message);
+        return scan.nextInt();
     }
 }

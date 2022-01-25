@@ -3,25 +3,40 @@ package chapterFour;
 import java.util.Scanner;
 
 public class CreditLimitCalculator {
+    private static final Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter the account number: ");
-        int accountnumber = input.nextInt();
-        System.out.println("Enter the balance: ");
-        int balance = input.nextInt();
-        System.out.println("Enter the charges: ");
-        int totalCharge = input.nextInt();
-        System.out.println("Enter the credit: ");
-        int totalCredit = input.nextInt();
-        System.out.println("Enter the credit limit: ");
-        int creditLimit= input.nextInt();
+
+        int accountNumber = input("Enter the Account Number");
+
+        int balance = input("Enter the balance: ");
+
+        int totalCharge = input("Enter the charges: ");
+
+        int totalCredit = input("Enter the credit: ");
+
+        int creditLimit= input("Enter the credit limit: ");
 
         int newBalance  = balance  + totalCharge - totalCredit;
-        if (newBalance > creditLimit){
-            System.out.println("Credit Limit Exceeded");
+
+        check(creditLimit, newBalance);
+    }
+
+    private static void check(int creditLimit, int newBalance) {
+        boolean isCreditLimitExceeded = newBalance > creditLimit;
+        if (isCreditLimitExceeded){
+            display("Credit Limit Exceeded");
         }
         else {
-            System.out.printf("The new balance is %d",newBalance);
+            System.out.printf("The new balance is %d", newBalance);
         }
+    }
+
+    public static int input(String message){
+        display(message);
+       return input.nextInt();
+    }
+
+    public static void display(String message){
+        System.out.println(message);
     }
 }

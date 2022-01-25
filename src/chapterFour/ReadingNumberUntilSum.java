@@ -3,15 +3,15 @@ package chapterFour;
 import java.util.Scanner;
 
 public class ReadingNumberUntilSum {
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         int userInput = 0;
         int sum = 0;
-        display("Enter the first number: ");
-        int number = scanner.nextInt();
+
+        int number = input("Enter the first number: ");
       for (int count = 0; sum < number ;count++){
-          display("Enter a number: ");
-          userInput = scanner.nextInt();
+
+          userInput =input("Enter a number: ");
           sum += userInput;
       }
 
@@ -23,5 +23,10 @@ public class ReadingNumberUntilSum {
     public static void display(String message){
         System.out.println(message);
     }
+    public static int input(String message){
+        System.out.println(message);
+        return scanner.nextInt();
+    }
+
 
 }

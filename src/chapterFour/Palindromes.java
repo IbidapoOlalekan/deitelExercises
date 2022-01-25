@@ -3,14 +3,14 @@ package chapterFour;
 import java.util.Scanner;
 
 public class Palindromes {
+    private static final Scanner userInput = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner userInput = new Scanner(System.in);
 
-        display("Enter a five digit number: ");
-        int num = userInput.nextInt();
+        int num =input("Enter five digit number: ");
 
         display(palindrome(num));
     }
+
     public static void display(String message){
         System.out.println(message);
     }
@@ -27,6 +27,11 @@ public class Palindromes {
             return "It is a palindrome";
         }
         return "It is not a palindrome!!!";
+    }
+
+    public static int input(String message){
+        display(message);
+        return userInput.nextInt();
     }
 
 

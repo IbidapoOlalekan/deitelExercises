@@ -80,7 +80,7 @@ public class Atm {
                default:
            }
        }
-       while (response != 1 && response != 2);
+       while (true);
     }
 
 
