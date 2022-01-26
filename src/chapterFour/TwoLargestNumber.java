@@ -3,8 +3,9 @@ package chapterFour;
 import java.util.Scanner;
 
 public class TwoLargestNumber {
+    private static final Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+
         int num;
 
         int largest;
@@ -14,13 +15,12 @@ public class TwoLargestNumber {
         int count = 1;
 
 
-        System.out.println("Enter a number:  ");
-        num = scan.nextInt();
+        num = input("Enter a number: ");
         largest = num;
         secondLargest = num;
         while (count < 10) {
-            System.out.println("Enter a number:  ");
-            num = scan.nextInt();
+
+            num = input("Enter a number: ");
             count++;
             if (num >= largest) {
                 secondLargest = largest;
@@ -30,11 +30,17 @@ public class TwoLargestNumber {
             else if (num > secondLargest){
                 secondLargest = num;
             }
-
-
-
         }
         System.out.printf("The largest number is %d%n",largest);
         System.out.printf("The second largest number is %d%n",secondLargest);
+    }
+
+    private static void display(String message){
+        System.out.println(message);
+    }
+
+    private static int input(String message){
+        display(message);
+        return scan.nextInt();
     }
 }
