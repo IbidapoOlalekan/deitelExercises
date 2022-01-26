@@ -7,7 +7,7 @@ public class Factorial {
     public static void main(String[] args) {
 
       int result =  factorialOf(5);
-      double results = doubleFactorial(4);
+      double results = factorialOf(4.0);
         System.out.println(results);
 
     }
@@ -27,7 +27,7 @@ public class Factorial {
 
     }
 
-    public static double doubleFactorial(int number){
+    public static double factorialOf(double number){
         if (number < 1){
             return 0;
         }
@@ -35,7 +35,7 @@ public class Factorial {
             return 1;
         }
         else {
-            return number * doubleFactorial(number - 1);
+            return number * factorialOf(number - 1);
         }
 
     }

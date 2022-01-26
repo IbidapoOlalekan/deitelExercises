@@ -7,7 +7,7 @@ public class WorldPopulationGrowth {
         int year = 1;
         double futurePopulation = 0;
         double increase = 0;
-        System.out.printf("Year \t  World Population \t Increase\n");
+        System.out.print("Year \t  World Population \t Increase\n");
         for (int i = 0; i < 75; i++){
             futurePopulation = populationOfTheWorld *Math.pow(1 + growthRate,year);
             year++;

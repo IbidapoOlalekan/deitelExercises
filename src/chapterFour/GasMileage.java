@@ -2,7 +2,7 @@ package chapterFour;
 
 import java.util.Scanner;
 
-public class GasMilleage {
+public class GasMileage {
     private static final Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
 

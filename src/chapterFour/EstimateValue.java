@@ -26,7 +26,7 @@ public class EstimateValue   {
         return product;
     }
     public static double factorial(double number){
-        double product = 1;
+        double product = 1.0;
         for (int i = 0 ; i < number ; number--){
             product *= number;
         }

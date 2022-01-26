@@ -3,7 +3,7 @@ package chapterFour;
 import java.util.Scanner;
 
 public class DecimalEquivalentOfBinaryNumber {
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         display("Enter A Number in 0's and 1's");
         int userInput = scanner.nextInt();
@@ -12,12 +12,11 @@ public class DecimalEquivalentOfBinaryNumber {
 
     }
     public static int binaryToDecimalOf(int number){
-        int num = number;
         int decimalValue = 0;
 
         int base = 1;
 
-        int temp = num;
+        int temp = number;
 
         while (temp > 0  ){
             int last_digit = temp % 10;
