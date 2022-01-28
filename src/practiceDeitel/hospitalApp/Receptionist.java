@@ -2,7 +2,7 @@ package practiceDeitel.hospitalApp;
 
 import java.time.LocalDate;
 
-public class Receptionist {
+public class Receptionist extends User{
     private int receptionistId;
     private String receptionistName;
     private Billing  generateBill;

@@ -1,6 +1,6 @@
 package practiceDeitel.hospitalApp;
 
-public class Patient {
+public class Patient extends User{
     private int patientId;
     private String patientName;
     private Billing payBill;

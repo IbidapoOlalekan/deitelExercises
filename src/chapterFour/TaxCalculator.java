@@ -23,12 +23,14 @@ public class TaxCalculator {
     }
 
     private static void calculateEarning(String name, double earning) {
-        if (earning <= 30000){
+        boolean isEarningLessThan30K = earning <= 30000;
+        if (isEarningLessThan30K){
             double tax = (0.15 * earning);
             System.out.printf("The tax for %s is %.2f%n", name, tax);
         }
         else {
-            if (earning >= 30000){
+            boolean isEarningGreaterThan30K = earning > 30000;
+            if (isEarningGreaterThan30K){
                 double tax = (0.20 * earning);
                 System.out.printf("The tax for %s is %.2f%n", name,tax);
             }
@@ -40,12 +42,12 @@ public class TaxCalculator {
     }
 
     private static double input(String message){
-        System.out.println(message);
+        display(message);
         return scan.nextDouble();
     }
 
     private static String input(){
-        System.out.println("Enter the name of the citizen: ");
+        display("Enter the name of the citizen: ");
         return scan.nextLine();
     }
 }
