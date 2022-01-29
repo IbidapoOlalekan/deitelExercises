@@ -32,7 +32,11 @@ class AppointmentsTest {
     @Test
     public void appointmentTimeCanBeSet(){
         Appointments appointment = new Appointments();
-        //LocalDateTime time = new LocalDateTime(20,2);
+        LocalDate time = LocalDate.ofYearDay(2003,4);
+        appointment.setAppointmentDate(time);
+        appointment.toString();
+        assertEquals(time,appointment.getAppointmentDate());
+
     }
 
 

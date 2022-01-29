@@ -1,20 +1,22 @@
 package practiceDeitel.hospitalApp;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 
 public class Appointments {
     private int appointmentId;
     private String appointmentNumber;
     private String appointmentType;
-    private LocalDateTime appointmentDate;
+    private LocalDate appointmentDate;
     private String appointmentDescription;
-    private Doctor appointmentDoctorId;
+    private ArrayList<Doctor> appointmentDoctorId;
     private Receptionist receptionistId;
 
-    public void addAppointments(Appointments appointment){
-        LocalDateTime date = LocalDateTime.now().truncatedTo(ChronoUnit.DAYS).withHour(6);
-        appointment.setAppointmentDate(date);
+    public void addAppointments(Appointments appointment, int date, int year){
+        LocalDate dat = LocalDate.ofYearDay(year,date);
+        appointment.setAppointmentDate(dat);
 
 
     }
@@ -43,11 +45,15 @@ public class Appointments {
         this.appointmentType = appointmentType;
     }
 
-    public LocalDateTime getAppointmentDate() {
+    public LocalDate getAppointmentDate() {
         return appointmentDate;
     }
+    @Override
+    public String toString() {
+        return "The time of the appointment is " + getAppointmentDate();
+    }
 
-    public void setAppointmentDate(LocalDateTime appointmentDate) {
+    public void setAppointmentDate(LocalDate appointmentDate) {
         this.appointmentDate = appointmentDate;
     }
 
