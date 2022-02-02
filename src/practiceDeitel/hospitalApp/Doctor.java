@@ -5,6 +5,11 @@ public class Doctor extends User  {
     private String doctorName;
     private Patient checkPatient;
 
+    public Doctor(int doctorId,String doctorName){
+        this.doctorId = doctorId;
+        this.doctorName = doctorName;
+    }
+
     public int getDoctorId() {
         return doctorId;
     }

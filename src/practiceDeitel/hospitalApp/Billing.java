@@ -20,4 +20,8 @@ public class Billing {
     public void setBillAmount(float billAmount) {
         this.billAmount = billAmount;
     }
+
+    public Patient getPatientId() {
+        return patientId;
+    }
 }

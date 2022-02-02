@@ -1,8 +1,8 @@
 package chapterNine;
 
 public class Ave extends Animal{
-    public Ave(){
-        super("Aves");
+    public Ave(String name){
+        super(name);
     }
     @Override
     public void breath(){
@@ -10,5 +10,8 @@ public class Ave extends Animal{
     }
     public void parentBreath(){
         super.breath();
+    }
+    public void move(){
+        System.out.println("Moving like an Ave");
     }
 }

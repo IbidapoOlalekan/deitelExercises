@@ -1,8 +1,9 @@
 package practiceDeitel.hospitalApp;
 
+import eStore.CreditCard;
+import org.jetbrains.annotations.NotNull;
+
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class Appointments {
@@ -11,14 +12,15 @@ public class Appointments {
     private String appointmentType;
     private LocalDate appointmentDate;
     private String appointmentDescription;
+    private CreditCard creditCardInformation;
     private ArrayList<Doctor> appointmentDoctorId;
     private Receptionist receptionistId;
 
-    public void addAppointments(Appointments appointment, int date, int year){
+    public String addAppointments(@NotNull Appointments appointment, int date, int year,int appointmentId,String appointmentNumber, String appointmentType){
         LocalDate dat = LocalDate.ofYearDay(year,date);
         appointment.setAppointmentDate(dat);
-
-
+        appointment.setAppointmentType(appointment + "Appointment");
+        return appointment.toString();
     }
 
     public int getAppointmentId() {
@@ -48,13 +50,24 @@ public class Appointments {
     public LocalDate getAppointmentDate() {
         return appointmentDate;
     }
-    @Override
-    public String toString() {
-        return "The time of the appointment is " + getAppointmentDate();
-    }
+
 
     public void setAppointmentDate(LocalDate appointmentDate) {
         this.appointmentDate = appointmentDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Appointments{" +
+                "appointmentId=" + appointmentId +
+                ", appointmentNumber='" + appointmentNumber + '\'' +
+                ", appointmentType='" + appointmentType + '\'' +
+                ", appointmentDate=" + appointmentDate +
+                ", appointmentDescription='" + appointmentDescription + '\'' +
+                ", creditCardInformation=" + creditCardInformation +
+                ", appointmentDoctorId=" + appointmentDoctorId +
+                ", receptionistId=" + receptionistId +
+                '}';
     }
 
     public String getAppointmentDescription() {
@@ -62,6 +75,11 @@ public class Appointments {
     }
 
     public void setAppointmentDescription(String appointmentDescription) {
+        boolean b = appointmentDescription.equalsIgnoreCase(appointmentDescription);
         this.appointmentDescription = appointmentDescription;
+    }
+
+    public void setCreditCardInformation(CreditCard creditCardInformation) {
+        this.creditCardInformation = creditCardInformation;
     }
 }

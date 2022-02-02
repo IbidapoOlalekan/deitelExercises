@@ -1,7 +1,7 @@
 package chapterNine;
 
 public class Mammal extends Animal{
-    public Mammal(){
-        super("Mammal!!!!");
+    public Mammal(String name){
+        super(name);
     }
 }
