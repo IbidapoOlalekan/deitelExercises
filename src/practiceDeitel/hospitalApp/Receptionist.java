@@ -8,6 +8,10 @@ public class Receptionist extends User{
     private Billing  generateBill;
     private Patient patient;
 
+    @Override
+    public void choice() {
+
+    }
 
     public int getReceptionistId() {
         return receptionistId;

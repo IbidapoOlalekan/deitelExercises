@@ -10,6 +10,12 @@ public class Doctor extends User  {
         this.doctorName = doctorName;
     }
 
+
+    @Override
+    public void choice() {
+
+    }
+
     public int getDoctorId() {
         return doctorId;
     }

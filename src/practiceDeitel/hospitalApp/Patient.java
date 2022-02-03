@@ -5,6 +5,10 @@ public class Patient extends User{
     private String patientName;
     private Billing payBill;
 
+    @Override
+    public void choice() {
+
+    }
 
     public int getPatientId() {
         return patientId;
