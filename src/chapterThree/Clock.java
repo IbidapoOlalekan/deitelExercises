@@ -2,6 +2,7 @@ package chapterThree;
 
 import java.security.PublicKey;
 import java.util.IllegalFormatCodePointException;
+import java.util.Scanner;
 
 public class Clock {
     private int hour;
@@ -60,8 +61,10 @@ public class Clock {
 
             return hour;
         }
+
         return hour;
     }
+
 
     public int getMinute() {
         return minute;

@@ -20,7 +20,6 @@ public class OddOrEven {
         display(message);
         return scan.nextInt();
     }
-
     public static String display(String message){
         System.out.println(message);
         return message;

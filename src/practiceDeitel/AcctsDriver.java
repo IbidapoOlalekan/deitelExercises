@@ -3,7 +3,9 @@ package practiceDeitel;
 public class AcctsDriver {
     public static void main(String[] args) {
         Accts myAccount = new Accts();
+
         myAccount.setName("Bayo");
+        myAccount.setName("Ibidapo Abdula");
         myAccount.setDay(21);
         myAccount.setMonth(8);
         myAccount.setYear(2001);
