@@ -54,8 +54,11 @@ public class MyArrayList {
 
     public void removeListByIndex(int index) {
         for (int i = index; i < array.length - 1; i++){
+            array[i] = null;
+            temp = array[i];
             array[i]=array[i+1];
         }
+        array[array.length-1] = temp;
         size--;
     }
 

@@ -99,9 +99,11 @@ public class myArrayListTest {
         array.add("Biro");
         array.add("Fenty");
         array.add("Prada");
-        assertEquals(array.getSize(),3);
+        array.add("pencil");
+        array.add("eraser");
+        assertEquals(array.getSize(),5);
         array.removeListByIndex(2);
-        assertArrayEquals(new String[]{"Biro","Fenty",null,null,null},array.getList());
+        assertArrayEquals(new String[]{"Biro","Fenty","pencil","eraser",null},array.getList());
     }
     @Test
     public void listCanBeGottenByIndex() throws Exception {
