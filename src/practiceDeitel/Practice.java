@@ -1,5 +1,7 @@
 package practiceDeitel;
 
+import java.util.ArrayList;
+
 public class Practice {
 //        private String firstName;
 //        private String lastName;
@@ -103,7 +105,6 @@ public class Practice {
                 return letterGrade;*/
 
                 //Chapter three
-
         private String name;
         private double average;
 
