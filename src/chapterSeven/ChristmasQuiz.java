@@ -1,19 +1,25 @@
 package chapterSeven;
 
 import java.security.SecureRandom;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class ChristmasQuiz {
-    private static Scanner scan = new Scanner(System.in);
-    private static SecureRandom random = new SecureRandom();
-    public static void main(String[] args) {
+    private static final SecureRandom randomNumbers  = new SecureRandom();
+    private static Scanner scanner = new Scanner(System.in);
 
-        System.out.println(selectRandomQuestion());
-        Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
+    public static void main(String[] args) {
+        displayQuestions();
 
     }
-    public static String[]  displayQuestions(){
+
+
+
+
+
+
+
+    public static void displayQuestions(){
         String[] userQuestion = new String[20];
         userQuestion[0] = """
                 1. When is Christmas Celebrated?\s
@@ -155,41 +161,38 @@ public class ChristmasQuiz {
                 d.) Rome
                 """;
 
-       return userQuestion;
-    }
-    public static String[] answers(){
-        String[] answers = {"a","a","a","c","a","a","d","c","c","c","c","a","c","a","b","a","c","c","c","b"};
-        int n = 0;
-        int correctAnswer = 0;
-        int incorrectAnswer = 0;
-        String answer = "";
-        for (int i = 0; i < 20;i++){
-            System.out.println("Please Enter Your Answer: ");
-            answer = scan.nextLine();
+        loopQuestion(userQuestion);
 
-            if (answer.compareTo(answers[0])==0){
-                correctAnswer++;
-            }
-            else {
-                incorrectAnswer++;
-            }
-        }
-        System.out.println("You have " + correctAnswer + "correct Answers");
+    }
+
+    public static String[] answer(){
+        String[] answers = {"a","a","a","c","a","a","d","c","c","c","c","a","c","a","b","a","c","c","c","b"};
+
         return answers;
     }
 
-
-    public static String selectRandomQuestion(){
-    random = new SecureRandom();
-    int rnd = 0;
-    for (int i= 0; i < 6; i++){
-        rnd =   random.nextInt(displayQuestions().length);
-        return displayQuestions()[rnd];
-
+    public static void loopQuestion(String[] questions){
+       String[] response = new String[20];
+       int count = 0;
+       for(int i=0; i< 5; i++){
+           int randomGenerator = randomNumbers.nextInt(20);
+           System.out.println(count + " " + questions[randomGenerator]);
+           String responsePicked = scanner.nextLine();
+           response[randomGenerator] = responsePicked;
+       }
+       compareAnswersAndQquestions(response,answer());
     }
 
-        return displayQuestions()[rnd];
+    public static void compareAnswersAndQquestions(String[]array1, String[]array2){
+        int count = 0;
+        for (int i = 0; i < array1.length; i++){
+            if (Objects.equals(array1[i], array2[i])){
+                count++;
+            }
+        }
+        System.out.println("You got " + count + " questions correctly");
+        if (count < 3) System.out.println("Get to know more about christmas");
+        else System.out.println("Congratulations, merry christmas");
     }
-
 
 }
