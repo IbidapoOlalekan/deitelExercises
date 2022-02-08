@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Diary {
     private String ownerName;
-    private ArrayList<Gist> gists = new ArrayList<>();
-    private ArrayList<Gist>favoriteGists = new ArrayList<>();
+    private ArrayList<Gists> gists = new ArrayList<>();
+    private ArrayList<Gists>favoriteGists = new ArrayList<>();
     private String password;
-    public ArrayList<Gist> getFavoriteGists() {
+    public ArrayList<Gists> getFavoriteGists() {
         return favoriteGists;
     }
 
-    public void setFavoriteGists(ArrayList<Gist> favoriteGists) {
+    public void setFavoriteGists(ArrayList<Gists> favoriteGists) {
         this.favoriteGists = favoriteGists;
     }
 
@@ -32,11 +32,11 @@ public class Diary {
         this.ownerName = ownerName;
     }
 
-    public List<Gist> getGists() {
+    public List<Gists> getGists() {
         return gists;
     }
 
-    public void setGists(ArrayList<Gist> gists) {
+    public void setGists(ArrayList<Gists> gists) {
         this.gists = gists;
     }
 
@@ -51,7 +51,7 @@ public class Diary {
 
     public void addNewGist(String title, String gistProper, String secretKey){
         if (secretKey.equals(password)){
-            Gist gist = new Gist(title, gistProper);
+            Gists gist = new Gists(title, gistProper);
             gists.add(gist);
         }
         else{
@@ -61,8 +61,8 @@ public class Diary {
 
 
 
-    public Gist findGistByTitle(String gistTitle) {
-        for(Gist gist : gists){
+    public Gists findGistByTitle(String gistTitle) {
+        for(Gists gist : gists){
             if(gist.getTitle().equalsIgnoreCase(gistTitle))return gist;
         }
         throw new IllegalArgumentException("Gist not found");
@@ -71,7 +71,7 @@ public class Diary {
 
     public void deleteGist(String gistTitle, String password) {
         if (password.equals(password)){
-            for (Gist gist : gists){
+            for (Gists gist : gists){
                 if(gist.getTitle().equalsIgnoreCase(gistTitle)){
                     gists.remove(gist);
                 }else{
@@ -82,7 +82,7 @@ public class Diary {
     }
 
     public void favorite(String gistTitle) {
-        for(Gist gist: gists){
+        for(Gists gist: gists){
             if(gist.getTitle().equalsIgnoreCase(gistTitle)){
                 favoriteGists.add(gist);
                 break;

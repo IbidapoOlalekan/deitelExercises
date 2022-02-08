@@ -38,7 +38,7 @@ class DiaryTest {
         myDiary.addNewGist("My Ex Love", "My Ex lover name is....","ilovejesus222");
         assertEquals(3,myDiary.getGists().size());
 
-       Gist foundGist =  myDiary.findGistByTitle("My Ex Love");
+       Gists foundGist =  myDiary.findGistByTitle("My Ex Love");
        assertEquals("My Ex Love", foundGist.getTitle());
         assertEquals("My Ex lover name is....", foundGist.getGist());
 

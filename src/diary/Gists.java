@@ -2,12 +2,12 @@ package diary;
 
 import java.time.LocalDateTime;
 
-public class Gist {
+public class Gists {
     private String title;
     private LocalDateTime time = LocalDateTime.now();
     private String gist;
 
-    public Gist(String entryTitle, String gossipProper){
+    public Gists(String entryTitle, String gossipProper){
         title = entryTitle;
         gist = gossipProper;
     }
