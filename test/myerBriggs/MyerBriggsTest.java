@@ -9,6 +9,7 @@ class MyerBriggsTest {
     public void questionCanBeAsked(){
         MyerBriggs.questions();
 
+
     }
 
 }
