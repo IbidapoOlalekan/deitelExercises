@@ -7,8 +7,7 @@ import ticTacToe.exception.InvalidGridSizeException;
 import ticTacToe.exception.SpotUnavailableException;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static ticTacToe.Result.NO_WINNER;
-import static ticTacToe.Result.WINNER;
+import static ticTacToe.Result.*;
 
 @DisplayName("Tic Tac Toe")
 public class TicTacToeTest {
@@ -218,6 +217,47 @@ public class TicTacToeTest {
     @DisplayName("Game Given all spot is filled It is Draw")
     @Test
     public void givenAllSpotsAreFilled_TheResultIsDraw() throws Exception {
+        ticTacToe.play(1, 1);
+        ticTacToe.play(2, 1);
+        ticTacToe.play(1, 2);
+        ticTacToe.play(2, 2);
+        ticTacToe.play(2, 3);
+        ticTacToe.play(1, 3);
+        ticTacToe.play(3, 1);
+        ticTacToe.play(3, 2);
+        ticTacToe.play(3,3);
+        assertEquals(ticTacToe.getPlayResult(),DRAW);
+    }
+
+    @DisplayName("When Board is Empty And It's to show the board Board is Empty")
+    @Test
+    public void whenBoardIsEmpty_Show_BoardIsEmpty()throws Exception{
+        String actualEmptyBoard = ticTacToe.getBoard().show();
+        String expectedEmptyBoard = "   |   |   \n" +
+                                "---|---|---\n" +
+                                "   |   |   \n" +
+                                "---|---|---\n" +
+                                "   |   |   ";
+        assertEquals(actualEmptyBoard, expectedEmptyBoard);
+    }
+
+    @DisplayName("Game When X and O is played in some spots")
+    @Test
+    public void gameWhenXandOarePlayedInSomeSpots() throws Exception {
+        ticTacToe.play(1,1);
+        ticTacToe.play(1,2);
+        ticTacToe.play(2,2);
+        ticTacToe.play(1,3);
+        ticTacToe.play(3,3);
+
+        String actualBoard= ticTacToe.getBoard().show();
+        String expectedBoard = """
+                X  | O | O\s
+                ---|---|---
+                   | X |  \s
+                ---|---|---
+                   |   |X  \s""";
+
 
     }
 

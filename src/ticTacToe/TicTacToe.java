@@ -50,7 +50,7 @@ public class TicTacToe {
         new VerticalStrategy().matches(this)){
             return Result.WINNER;
         }
-        if (isDraw()){
+        else if (isDraw()){
             return Result.DRAW;
         }
 
