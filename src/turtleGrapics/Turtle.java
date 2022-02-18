@@ -64,6 +64,17 @@ public class Turtle {
     public void move(int numberOfSteps) {
         if (currentDirection == EAST) increaseColumnBy(numberOfSteps - 1);
         if (currentDirection == SOUTH) increaseRowBy(numberOfSteps - 1);
+        if (currentDirection == NORTH) decreaseRowBy(numberOfSteps - 1);
+        if (currentDirection == WEST) decreaseColumnBy(numberOfSteps - 1);
+    }
+
+    private void decreaseColumnBy(int decrease) {
+        currentPosition.setColumn(currentPosition.getColumn() - decrease);
+    }
+
+    private void decreaseRowBy(int decrease) {
+        int currentRow = currentPosition.getRow();
+        currentPosition.setRow(currentRow - decrease);
     }
 
     private void increaseRowBy(int increase) {
