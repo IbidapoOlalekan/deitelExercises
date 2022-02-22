@@ -34,6 +34,8 @@ public class SavingsAccount {
         save2.calculateMonthlyInterest();
         System.out.printf("saver two new balance is %.2f\n",save2.calculateMonthlyInterest());
         System.out.printf("saver one new balance is %.2f\n",save1.calculateMonthlyInterest());
+
+
     }
 
 

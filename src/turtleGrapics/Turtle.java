@@ -61,7 +61,7 @@ public class Turtle {
 
     }
 
-    public void move(int numberOfSteps) {
+    public void moveWithoutWriting(int numberOfSteps) {
         if (currentDirection == EAST) increaseColumnBy(numberOfSteps - 1);
         if (currentDirection == SOUTH) increaseRowBy(numberOfSteps - 1);
         if (currentDirection == NORTH) decreaseRowBy(numberOfSteps - 1);
@@ -88,5 +88,27 @@ public class Turtle {
 
     public Position getCurrentPosition() {
         return currentPosition;
+    }
+
+    public void move(int noOfSteps, SketchPad pad) {
+        if (biro.getState().equals(DOWN)){
+         write(noOfSteps, pad);
+           //write
+        }
+            moveWithoutWriting(noOfSteps);
+
+    }
+
+    private void write(int noOfSteps, SketchPad sketchPad) {
+        int[][] floor = sketchPad.getFloor();
+        int row  = currentPosition.getRow();
+        int column = currentPosition.getColumn();
+        switch(currentDirection){
+            case EAST ->  {
+                for (int i = column; i < column+noOfSteps; i++){
+                    floor[row][i] = 1;
+                }
+            }
+        }
     }
 }

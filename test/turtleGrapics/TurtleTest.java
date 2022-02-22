@@ -135,40 +135,54 @@ class TurtleTest {
 
     @Test
     public void turtleCanMove_WhileFacingEastTest(){
-        ijapa.move(6);
-        ijapa.move(5);
+        ijapa.moveWithoutWriting(6);
+        ijapa.moveWithoutWriting(5);
         Position expected = new Position(0,9);
         assertEquals(expected,ijapa.getCurrentPosition());
     }
     @Test
     public void turtleCanMove_WhileFacingSouthTest(){
         ijapa.turnRight();
-        ijapa.move(6);
+        ijapa.moveWithoutWriting(6);
         Position expected = new Position(5,0);
         assertEquals(expected,ijapa.getCurrentPosition());
     }
     @Test
     public void turtleCanMove_WhileFacingNorthTest(){
         ijapa.turnRight();
-        ijapa.move(6);
+        ijapa.moveWithoutWriting(6);
         ijapa.turnLeft();
         ijapa.turnLeft();
-        ijapa.move(6);
+        ijapa.moveWithoutWriting(6);
         Position expected = new Position(0,0);
         assertEquals(expected,ijapa.getCurrentPosition());
     }
 
     @Test
     public void turtleCanMove_WhileFacingWestTest(){
-        ijapa.move(6);
+        ijapa.moveWithoutWriting(6);
         ijapa.turnRight();
         ijapa.turnRight();
         assertSame(WEST,ijapa.getCurrentDirection());
-        ijapa.move(3);
+        ijapa.moveWithoutWriting(3);
         Position expected = new Position(0,3);
         assertEquals(expected,ijapa.getCurrentPosition());
     }
 
+    @Test void turtleCanWrite_whenPenIsDownTest() {
+        ijapa.penDown();
+        SketchPad pad = new SketchPad(5,5);
+        ijapa.move(5,pad);
+        //assert
+        assertEquals(new Position(0,4), ijapa.getCurrentPosition());
+        int[][] floor = pad.getFloor();
+        assertEquals(1,floor[0][0]);
+        assertEquals(1,floor[0][1]);
+        assertEquals(1,floor[0][2]);
+        assertEquals(1,floor[0][3]);
+        assertEquals(1,floor[0][4]);
+        pad.display();
+    }
 
 
 }
