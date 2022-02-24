@@ -109,6 +109,11 @@ public class Turtle {
                 int sketchPadColumnLength = pad.getFloor()[row].length;
                 if (newMove > sketchPadColumnLength) throw new InvalidMoveException("Ijapa don fall");
             }
+            case SOUTH ->{
+                int newMove = row + noOfSteps;
+                int sketchPadRowLength = pad.getFloor()[column].length;
+                if (newMove > sketchPadRowLength) throw new InvalidMoveException("Ijapa don fall");
+            }
         }
     }
 
@@ -118,11 +123,29 @@ public class Turtle {
         int column = currentPosition.getColumn();
         switch(currentDirection){
             case EAST ->  {
-                for (int i = column; i < column+noOfSteps; i++){
+                for (int i = column; i < column+noOfSteps; i++) {
                     floor[row][i] = 1;
                 }
-
             }
+            case SOUTH -> {
+                for (int i = row; i < row+noOfSteps; i++){
+                    floor[i][column] = 1;
+                }
+            }
+
+            case NORTH->{
+                for(int i = row; i > row-noOfSteps; i--){
+                    floor[i][column] = 1;
+                }
+            }
+
+            case WEST ->{
+                for(int i = column; i > column-noOfSteps; i--){
+                    floor[row][i] = 1;
+                }
+            }
+
+
         }
     }
 }

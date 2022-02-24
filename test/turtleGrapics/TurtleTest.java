@@ -184,6 +184,46 @@ class TurtleTest {
 //        pad.display();
     }
 
+    @Test void turtleCanWrite_whileFacingSouthTest_WhenPenIsDown(){
+        ijapa.penDown();
+        SketchPad pad  = new SketchPad(5,5);
+        ijapa.turnRight();
+        ijapa.move(3,pad);
+
+        assertEquals(new Position(2,0),ijapa.getCurrentPosition());
+        int[][] floor = pad.getFloor();
+        assertEquals(1,floor[0][0]);
+        assertEquals(1,floor[1][0]);
+        assertEquals(1,floor[2][0]);
+        pad.display();
+    }
+
+    @Test void turtleCanWrite_whileFacingNorthTest_WhenPenIsDown(){
+        SketchPad pad  = new SketchPad(5,5);
+        ijapa.turnRight();
+        ijapa.move(3,pad);
+        ijapa.turnLeft();
+        ijapa.turnLeft();
+        assertEquals(new Position(2,0),ijapa.getCurrentPosition());
+        ijapa.penDown();
+        ijapa.move(1,pad);
+        int[][] floor = pad.getFloor();
+        assertEquals(1,floor[2][0]);
+    }
+
+    @Test void turtleCanWrite_whileFacingWestTest_WhenPenIsDown(){
+        SketchPad pad  = new SketchPad(5,5);
+        ijapa.move(2,pad);
+        ijapa.turnRight();
+        ijapa.turnRight();
+        assertEquals(new Position(0,1),ijapa.getCurrentPosition());
+        ijapa.penDown();
+        ijapa.move(2,pad);
+        int[][] floor = pad.getFloor();
+        assertEquals(1,floor[0][1]);
+        assertEquals(1,floor[0][0]);
+    }
+
     @Test
     public void whenTurtlesGoesOutOfSketchPad_exceptionIsThrown(){
         ijapa.penDown();
