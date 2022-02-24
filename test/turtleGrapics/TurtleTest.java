@@ -238,6 +238,34 @@ class TurtleTest {
         }
     }
 
+    @Test void whenTurtleIsFacingSouth_AndGoesOutOfSketchPad_exceptionIsThrown(){
+        ijapa.turnRight();
+        ijapa.penDown();
+        SketchPad pad  = new SketchPad(5,5);
+        try{
+            ijapa.move(6,pad);
+        }
+        catch (InvalidMoveException e) {
+            assertEquals(InvalidMoveException.class, e.getClass());
+            assertEquals("Ijapa don fall",e.getMessage());
+        }
+    }
+    @Test void whenTurtleIsFacingNorth_AndGoesOutOfSketchPad_exceptionIsThrown(){
+        ijapa.turnRight();
+        ijapa.moveWithoutWriting(3);
+        ijapa.turnRight();
+        ijapa.turnRight();
+        ijapa.penDown();
+        SketchPad pad  = new SketchPad(5,5);
+        try{
+            ijapa.move(6,pad);
+        }
+        catch (InvalidMoveException e) {
+            assertEquals(InvalidMoveException.class, e.getClass());
+            assertEquals("Ijapa don fall",e.getMessage());
+        }
+    }
+
 
 
 }
