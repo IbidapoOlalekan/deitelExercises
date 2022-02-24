@@ -181,8 +181,23 @@ class TurtleTest {
         assertEquals(1,floor[0][2]);
         assertEquals(1,floor[0][3]);
         assertEquals(1,floor[0][4]);
-        pad.display();
+//        pad.display();
     }
+
+    @Test
+    public void whenTurtlesGoesOutOfSketchPad_exceptionIsThrown(){
+        ijapa.penDown();
+        SketchPad sketchPad = new SketchPad(5,5);
+    //    assertThrows(InvalidMoveException.class,()-> ijapa.move(5,sketchPad));
+      try {
+        ijapa.move(5,sketchPad);
+    }
+      catch (InvalidMoveException e) {
+      assertEquals(InvalidMoveException.class, e.getClass());
+      assertEquals("Ijapa don fall",e.getMessage());
+        }
+    }
+
 
 
 }

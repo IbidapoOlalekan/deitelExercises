@@ -91,12 +91,25 @@ public class Turtle {
     }
 
     public void move(int noOfSteps, SketchPad pad) {
+        validateMove(noOfSteps,pad);
         if (biro.getState().equals(DOWN)){
          write(noOfSteps, pad);
            //write
         }
             moveWithoutWriting(noOfSteps);
 
+    }
+
+    private void validateMove(int noOfSteps, SketchPad pad) {
+        int row = currentPosition.getRow();
+        int column = currentPosition.getColumn();
+        switch (currentDirection){
+            case EAST -> {
+                int newMove =column + noOfSteps;
+                int sketchPadColumnLength = pad.getFloor()[row].length;
+                if (newMove > sketchPadColumnLength) throw new InvalidMoveException("Ijapa don fall");
+            }
+        }
     }
 
     private void write(int noOfSteps, SketchPad sketchPad) {
@@ -108,6 +121,7 @@ public class Turtle {
                 for (int i = column; i < column+noOfSteps; i++){
                     floor[row][i] = 1;
                 }
+
             }
         }
     }
