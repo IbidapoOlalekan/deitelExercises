@@ -117,7 +117,14 @@ public class Turtle {
             case NORTH -> {
                 int newMove = row - noOfSteps;
                 int sketchPadRowLength = pad.getFloor()[column].length;
-                if (newMove < sketchPadRowLength) throw new InvalidMoveException("Ijapa don fall");
+                if (newMove > sketchPadRowLength) throw new InvalidMoveException("Ijapa don fall");
+            }
+
+            case WEST ->{
+                int newMove = column - noOfSteps;
+                int sketchPadRowLength = pad.getFloor()[row].length;
+                if (newMove > sketchPadRowLength) throw new InvalidMoveException("Ijapa don fall");
+
             }
 
         }

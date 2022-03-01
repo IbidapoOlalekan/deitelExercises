@@ -20,6 +20,7 @@ public class TicTacToeTest {
     @Test
     public void ticTacToeWouldHaveABoard() throws Exception {
         Board board = new Board(3);
+
         assertEquals(3,board.getSize());
     }
     @DisplayName("Board Can Be SetUp")
@@ -267,5 +268,6 @@ public class TicTacToeTest {
     private void getPlayResult() {
         ticTacToe.getPlayResult();
         assertEquals(NO_WINNER, Result.NO_WINNER);
+
     }
 }

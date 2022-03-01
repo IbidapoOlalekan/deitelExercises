@@ -265,6 +265,21 @@ class TurtleTest {
             assertEquals("Ijapa don fall",e.getMessage());
         }
     }
+    @Test void whenTurtleIsFacingWest_AndGoesOutOfSketchPad_exceptionIsThrown(){
+        ijapa.turnLeft();
+        ijapa.turnLeft();
+        ijapa.penDown();
+        SketchPad pad  = new SketchPad(5,5);
+        try {
+            ijapa.move(4,pad);
+        }
+        catch(InvalidMoveException e){
+            assertEquals(InvalidMoveException.class, e.getClass());
+            assertEquals("Ijapa don fall", e.getMessage());
+        }
+
+
+    }
 
 
 
