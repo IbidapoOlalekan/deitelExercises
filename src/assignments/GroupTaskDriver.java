@@ -13,55 +13,69 @@ public class GroupTaskDriver {
             calculatePriceOf();
             displayCatalog();
         }catch (IllegalArgumentException e){
-            System.out.println("Invalid");
+            display("Invalid");
         }
-
-
-
 
     }
 
     private static void calculatePriceOf() {
         String userInput;
         do {
-            System.out.println("What do you want to buy");
+            display("What do you want to buy");
             String productName = scanner.nextLine();
 
             if(productName == null || productName.equals("")){
                 throw new IllegalArgumentException("invalid product name");
             }
 
-            System.out.println("How much is it ");
-            double amount = scanner.nextDouble();
-            if(amount <= 0.0){
-                throw new IllegalArgumentException("invalid amount");
-            }
-            System.out.println("Total Quantity: ");
-            int quantity = scanner.nextInt();
+            double amount = input("How much is it");
 
-            if(quantity <= 0){
-                throw new IllegalArgumentException("invalid quantity");
-            }
+            throwError(amount,"Invalid Amount");
+
+            int quantity = input("Total Quantity: ");
+
+            throwError(quantity,"Invalid Quantity");
+
             double total = amount * quantity;
 
             GroupTask group = new GroupTask(productName, amount, quantity,total);
             catalogs.add(group);
-            System.out.println("What Else????");
+            display("What Else????");
             scanner.nextLine();
              userInput = scanner.nextLine();
         }
         while(userInput.charAt(0)=='y');
     }
 
+
+
     public static void displayCatalog(){
-        System.out.println("""
+        display("""
                         MALL MART!
                         10, Sabo, Yaba
                 Product Name\tQuantity\tPrice\tTotal""");
         for (GroupTask catalog: catalogs) {
-            System.out.println(catalog.toString());
+            display(catalog.toString());
         }
     }
 
+    public static void display(String message) {
+        System.out.println(message);
+    }
+
+    public static int input(String message){
+        display(message);
+        return scanner.nextInt();
+    }
+    public static void throwError(double userInput, String message){
+        if (userInput <= 0.0){
+            throw new IllegalArgumentException(message);
+        }
+    }
+    public static void throwError(int userInput, String message){
+        if (userInput <= 0.0){
+            throw new IllegalArgumentException(message);
+        }
+    }
 
 }

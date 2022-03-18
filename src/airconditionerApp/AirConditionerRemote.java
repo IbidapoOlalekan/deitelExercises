@@ -15,7 +15,7 @@ public class AirConditionerRemote {
             switch (response) {
                 case 1 -> {
                     samsungAirConditioner.turnOn();
-                    System.out.println("Air Conditioner Is Powered On!!!!!!");
+                    display("Air Conditioner Is Powered On!!!!!!");
                     int function;
                     do {
                         functionPrompt();

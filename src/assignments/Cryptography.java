@@ -3,26 +3,38 @@ package assignments;
 import java.util.Scanner;
 
 public class Cryptography {
+    private static Scanner scan  = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner scan  = new Scanner(System.in);
-        System.out.println("Enter a four digit number: ");
-        int data = scan.nextInt();
+
+        int data = input("Enter a four digit number:");
         int firstDigit = data/1000;
         int secondDigit = (data%1000)/100;
 
         int thirdDigit  = (data % 100)/10;
 
-        int fourthDigit = (data % 10)/1;
+        int fourthDigit = (data % 10);
 
-        firstDigit = (firstDigit + 7)%10;
+        firstDigit = encrypt(firstDigit);
 
-        secondDigit =(secondDigit + 7)%10;
+        secondDigit = encrypt(secondDigit);
 
-        thirdDigit = (thirdDigit + 7)%10;
+        thirdDigit = encrypt(thirdDigit);
 
-        fourthDigit = (fourthDigit + 7)%10;
+        fourthDigit = encrypt(fourthDigit);
 
 
         System.out.printf("The encrypted data is %d%d%d%d",thirdDigit,fourthDigit,firstDigit,secondDigit);
+    }
+
+    public static  int encrypt(int digit){
+        return (digit + 7)%10;
+    }
+    public static void display(String message){
+        System.out.println(message);
+    }
+
+    public static int input(String message){
+        display(message);
+        return scan.nextInt();
     }
 }
