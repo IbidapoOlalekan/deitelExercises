@@ -39,4 +39,22 @@ class StringUtilsTest {
         int count = stringUtils._indexOf(false,'b');
         assertEquals(-1,count);
     }
+
+    @Test
+    void stringLastIndexTest(){
+        int count = stringUtils._lastIndexOf('o');
+        assertEquals(2,count);
+    }
+
+    @Test
+    void stringLastIndexIgnoreCaseTest(){
+        int count = stringUtils._lastIndexOf(true,'o');
+        assertEquals(2,count);
+    }
+
+    @Test
+    void stringLastIndexDoesntExistTest(){
+        int count = stringUtils._lastIndexOf('r');
+        assertEquals(-1,count);
+    }
 }
