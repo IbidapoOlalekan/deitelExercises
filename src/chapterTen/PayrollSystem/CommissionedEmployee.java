@@ -1,11 +1,13 @@
 package chapterTen.PayrollSystem;
 
+import chapterEight.Date;
+
 public class CommissionedEmployee extends Employee{
 
     public double grossSales;
     public double commissionRate;
-    public CommissionedEmployee(String firstName, String lastName, String socialSecurityNumber, double grossSales, double commissionRate) {
-        super(firstName, lastName, socialSecurityNumber);
+    public CommissionedEmployee(String firstName, String lastName, String socialSecurityNumber, Date birthDate, double grossSales, double commissionRate) {
+        super(firstName, lastName, socialSecurityNumber, birthDate);
         if (commissionRate <= 0.0 || commissionRate >= 1.0) throw new IllegalArgumentException("Commission must be greater than zero and less than one");
         if (grossSales < 0.0) throw new IllegalArgumentException("Gross sales must be greater than or equal to zero");
         this.commissionRate = commissionRate;

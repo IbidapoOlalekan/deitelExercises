@@ -6,15 +6,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SalariedEmployeeTest {
-    SalariedEmployee employee;
+class PieceWorkerTest {
+    PieceWorker employee;
     @BeforeEach
     public void setUp(){
         Date date = new Date(2021,3,24);
-        employee = new SalariedEmployee("Olalekan", "Ibidapo", "0254836708",date,500000);
+        employee = new PieceWorker("Olalekan", "Ibidapo", "0254836708",date,20,500);
     }
-
-    @Test void employeeFirstNameTest() {
+    @Test
+    void employeeFirstNameTest() {
         assertEquals("Olalekan",employee.getFirstName());
     }
 
@@ -26,15 +26,18 @@ class SalariedEmployeeTest {
         assertEquals("0254836708",employee.getSocialSecurityNumber());
     }
 
-    @Test void employeeSalaryTest() {
-        assertEquals(500000,employee.earnings());
+    @Test void employeeWagesTest() {
+        assertEquals(20,employee.getWages());
     }
 
-    @Test void employeeSalaryCannotBeLessThanZero_throwsException() {
-        assertThrows(IllegalArgumentException.class,()-> employee.setWeeklySalary(0));
+    @Test void employeeWagesCannotBeLessThanOrEqualTOZero_throwsException() {
+        assertThrows(IllegalArgumentException.class,()->employee.setWages(0));
     }
 
-    @Test void toStrings(){
-        System.out.println(employee.toString());
+    @Test void employeePiecesTest(){
+        assertEquals(500,employee.getPieces());
     }
+
+
+
 }

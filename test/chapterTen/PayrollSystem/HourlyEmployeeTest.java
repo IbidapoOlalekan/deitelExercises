@@ -1,5 +1,6 @@
 package chapterTen.PayrollSystem;
 
+import chapterEight.Date;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +10,8 @@ class HourlyEmployeeTest {
     HourlyEmployee employee;
     @BeforeEach
     public void setUp() {
-        employee = new HourlyEmployee("Olalekan", "Ibidapo", "0254836708",20,500);
+        Date date = new Date(2021,3,24);
+        employee = new HourlyEmployee("Olalekan", "Ibidapo", "0254836708",date,20,500);
     }
     @Test
     void employeeFirstNameTest() {

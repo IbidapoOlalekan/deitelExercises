@@ -1,5 +1,6 @@
 package chapterTen.PayrollSystem;
 
+import chapterEight.Date;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -8,8 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class CommissionedEmployeeTest {
     CommissionedEmployee employee;
     @BeforeEach
-    public void seee(){
-        employee = new CommissionedEmployee("Shola","Azeez","00000000",5000,0.5);
+    public void setUp(){
+        Date date = new Date(2021,3,24);
+        employee = new CommissionedEmployee("Shola","Azeez","00000000",date,5000,0.5);
     }
 
     @Test void commissionedEmployeeFirstName() {

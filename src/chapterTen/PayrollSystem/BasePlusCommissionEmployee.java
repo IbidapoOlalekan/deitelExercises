@@ -1,11 +1,13 @@
 package chapterTen.PayrollSystem;
 
+import chapterEight.Date;
+
 public class BasePlusCommissionEmployee extends CommissionedEmployee{
 
     private double baseSalary;
 
-    public BasePlusCommissionEmployee(String firstName, String lastName, String socialSecurityNumber, double grossSales, double commissionRate, double baseSalary) {
-        super(firstName, lastName, socialSecurityNumber, grossSales, commissionRate);
+    public BasePlusCommissionEmployee(String firstName, String lastName, String socialSecurityNumber, Date birthDate, double grossSales, double commissionRate, double baseSalary) {
+        super(firstName, lastName, socialSecurityNumber,birthDate,grossSales, commissionRate);
         if (baseSalary < 0.0) throw new IllegalArgumentException("Base Salary must be greater than or equal to zero");
         this.baseSalary = baseSalary;
     }
@@ -26,7 +28,7 @@ public class BasePlusCommissionEmployee extends CommissionedEmployee{
 
     @Override
     public String toString() {
-    return String.format("%s %s; %s: #%, .2f","base-salaried",super.toString(), "base salary", getBaseSalary());
+    return String.format("%s %s; %s: #%, .2f","Base-salaried",super.toString(), "Base salary", getBaseSalary());
 
     }
 }
