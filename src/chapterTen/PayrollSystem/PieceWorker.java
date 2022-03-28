@@ -15,12 +15,13 @@ public class PieceWorker extends Employee{
 
     @Override
     public double earnings() {
+
         return getWages() * getPieces();
     }
 
     @Override
     public String toString() {
-       return String.format("%s %s; %s: #%, .2f","Piece-salaried",super.toString(), "Piece: %.2f", getPieces(), "Wages: %.2f", getWages());
+       return String.format("%s %s %n%s: %s %n%s: #% .2f ","Piece-salaried Employee: ",super.toString(),"Pieces",getPieces(),"Wages: ",getWages());
     }
 
     public double getWages() {

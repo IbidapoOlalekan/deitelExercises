@@ -15,7 +15,7 @@ public class PigLatinWord {
 
 
     public static String printLatinWord(String word){
-        StringBuilder result = new StringBuilder(word);
+        StringBuilder result = new StringBuilder (word);
         Character character = result.charAt(0);
         result.insert(result.length(), character);
         result.append("ay");
