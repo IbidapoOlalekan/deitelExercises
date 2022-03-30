@@ -1,6 +1,7 @@
 package chapterSixteen;
 
 import java.util.*;
+import java.util.stream.IntStream;
 
 public class LetterTypeCount {
     public static void main(String[] args) {
@@ -9,6 +10,10 @@ public class LetterTypeCount {
         displayMyMap(myMap);
 
         System.out.println(myMap);
+
+        int[]array = {1,2,3,4,5,6,7,8,10,111};
+        int result = IntStream.of(array).reduce(1,(x,y) -> x * y * 3);
+        System.out.println(result);
     }
 
     private static void displayMyMap(Map<String, Integer> myMap) {
