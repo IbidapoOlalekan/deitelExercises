@@ -1,5 +1,6 @@
 package chapterSeventeen;
 
+import java.security.SecureRandom;
 import java.util.IntSummaryStatistics;
 import java.util.stream.IntStream;
 
@@ -12,5 +13,10 @@ public class EvenSum {
         System.out.println(IntStream.rangeClosed(1,10).map(number-> number*2).sum());
 
         System.out.println(IntStream.rangeClosed(1,10).summaryStatistics());
+
+        SecureRandom random = new SecureRandom();
+        System.out.println(random.ints(100,1,25)
+                .sum()
+        );
     }
 }
