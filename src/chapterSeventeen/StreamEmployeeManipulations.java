@@ -17,6 +17,7 @@ public class StreamEmployeeManipulations {
     List<Employee> employeeList = Arrays.asList(employees);
     Predicate<Employee> isInvestor = (department) -> department.getDepartment().equals("VC");
     Map<String, List<Employee>> employeeGroups = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+    Map<String, Long> employeeGroup = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment,Collectors.counting()));
 }
 
     class Employee{
