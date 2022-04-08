@@ -8,14 +8,20 @@ public class TokenWordsStartingWithB {
     public static void main(String[] args) {
         String sentence = input("Enter a sentence and press Enter: ");
         String[] tokens = sentence.split(" ");
+        checkIfTokensStartWithB(tokens);
+    }
+
+    private static void checkIfTokensStartWithB(String[] tokens) {
         for (String token : tokens) {
-            System.out.println(token.toUpperCase());
-            System.out.println(token.toLowerCase());
-            if (token.startsWith("b")){
-                System.out.println(token);
+            display(token.toUpperCase());
+            display(token.toLowerCase());
+            boolean isTokenStartWithB = token.startsWith("b");
+            if (isTokenStartWithB){
+                display(token);
             }
-            if (token.endsWith("ED")){
-                System.out.println(token);
+            boolean isTokenEndsWithEd = token.endsWith("ED");
+            if (isTokenEndsWithEd){
+                display(token);
             }
         }
     }
