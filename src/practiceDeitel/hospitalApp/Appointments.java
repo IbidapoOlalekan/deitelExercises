@@ -14,11 +14,14 @@ public class Appointments {
     private ArrayList<Doctor> appointmentDoctorId;
     private Receptionist receptionistId;
 
-    public void addAppointments(Appointments appointment, int date, int year){
+    public Appointments addAppointments(int date, int year, int appointmentId, String appointmentNumber, String appointmentType){
+        Appointments appointment = new Appointments();
         LocalDate dat = LocalDate.ofYearDay(year,date);
         appointment.setAppointmentDate(dat);
-
-
+        appointment.setAppointmentId(appointmentId);
+        appointment.setAppointmentNumber(appointmentNumber);
+        appointment.setAppointmentType(appointmentType);
+        return appointment;
     }
 
     public int getAppointmentId() {

@@ -12,7 +12,7 @@ public class BodyMassIndexCalculator {
             validate(weightInKilograms);
         }
         catch (IllegalArgumentException e){
-            System.out.println(e.getMessage());
+            display(e.getMessage());
         }
         double heightInMeters = input("Enter the user height in meters");
         if (validate(heightInMeters));

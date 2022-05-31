@@ -11,4 +11,9 @@ public class CircleAreaTest {
        double area =  CircleArea.circleArea(radius);
        assertEquals(1257,area);
     }
+    @Test void circleRadiusCannotBeNegativeTest(){
+        double radius = -20;
+        double area = CircleArea.circleArea(radius);
+        assertEquals(0,area);
+    }
 }
