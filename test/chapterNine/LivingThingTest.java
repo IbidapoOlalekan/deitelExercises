@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class LivingThingTest {
     @Test
     public void LivingAvesBreathingTest(){
-        Ave ave = new Ave();
+        Ave ave = new Ave("Ave");
 //        ave.parentBreath();
     }
 }

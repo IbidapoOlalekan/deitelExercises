@@ -11,7 +11,6 @@ public class AsterisksShapes {
         System.out.println("*\t\t*");
         System.out.println("*\t\t*");
         System.out.println("*********");
-
         System.out.println();
 
         System.out.println("   *** ");

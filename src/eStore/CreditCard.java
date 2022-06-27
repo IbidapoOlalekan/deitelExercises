@@ -10,6 +10,12 @@ public class CreditCard {
     private String creditCardName;
     private CardType cardType;
 
+    public CreditCard(String cardCvv, String creditCardName, String creditCardNumber, CardType cardType){
+        this.cardCvv = cardCvv;
+        this.creditCardName = creditCardName;
+        this.creditCardNumber = creditCardNumber;
+        this.cardType = cardType;
+    }
     public void setCardType(CardType cardType) {
         this.cardType = cardType;
     }

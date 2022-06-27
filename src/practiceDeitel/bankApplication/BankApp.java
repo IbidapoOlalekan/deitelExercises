@@ -1,10 +1,24 @@
 package practiceDeitel.bankApplication;
 
-public class BankApp {
+public class BankApp extends Pay {
+
 
     private String phoneNumber;
     private String accountName;
     private double balance;
+
+    @Override
+    public String toString() {
+        return
+                " accountName: " + accountName + '\'' +
+                ", balance=" + balance +
+                '}';
+    }
+
+    @Override
+    public String pay() {
+        return "Paid Successfully";
+    }
 
     public BankApp(String accountName, String phoneNumber) {
         this.accountName = accountName;
@@ -43,4 +57,8 @@ public class BankApp {
 
     }
 
+    public String makePayment() {
+        pay();
+        return pay();
+    }
 }

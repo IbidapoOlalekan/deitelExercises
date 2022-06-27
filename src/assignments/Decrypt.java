@@ -5,51 +5,44 @@ import com.sun.security.jgss.GSSUtil;
 import java.util.Scanner;
 
 public class Decrypt {
+    private static Scanner scan = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter Encrypted Data: ");
-        int encrypted = scan.nextInt();
+
+        int encrypted = input("Enter encrypted data: ");
 
         int firstDigit = encrypted / 1000;
         int secondDigit = (encrypted % 1000)/100;
         int thirdDigit = (encrypted % 100)/10;
-        int fourthDigit = (encrypted % 10)/1;
+        int fourthDigit = (encrypted % 10);
 
-        if (firstDigit >= 7){
-          firstDigit =   firstDigit - 7;
-        }
-        else {
-            firstDigit =  (firstDigit + 10) - 7;
-        }
+      firstDigit = decrypt(firstDigit);
 
-        if (secondDigit >= 7){
-            secondDigit = secondDigit - 7;
-        }
-        else {
-            secondDigit = (secondDigit + 10) - 7;
-        }
+      secondDigit = decrypt(secondDigit);
 
-        if (thirdDigit >= 7){
-            thirdDigit = thirdDigit - 7;
-        }
-        else {
-            thirdDigit = (thirdDigit + 10) - 7;
+      thirdDigit = decrypt(thirdDigit);
 
-        }
-
-        if (fourthDigit >= 7){
-            fourthDigit = fourthDigit - 7;
-
-        }
-        else {
-            fourthDigit = (fourthDigit + 10) - 7;
-
-        }
+      fourthDigit = decrypt(fourthDigit);
 
         System.out.printf("The decrypted data is %d%d%d%d",thirdDigit,fourthDigit,firstDigit,secondDigit);
 
+    }
 
+    public static void display(String message) {
+        System.out.println(message);
+    }
 
-
+    public static int input(String message){
+        display(message);
+        return scan.nextInt();
+    }
+                                                                                                                     
+    public static int decrypt(int userInput){
+        if (userInput >= 7){
+            return userInput - 7;
+        }
+        else {
+            return (userInput + 10) - 7;
+        }
     }
 }

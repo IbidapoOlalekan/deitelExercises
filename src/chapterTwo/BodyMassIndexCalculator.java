@@ -33,6 +33,8 @@ public class BodyMassIndexCalculator {
         }
         else{
             display("Obese!!!!!!!!");
+
+
         }
     }
 

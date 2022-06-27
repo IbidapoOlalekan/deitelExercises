@@ -7,8 +7,6 @@ public class GuessGame {
     private static final Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
     guess();
-
-
     }
 
     public static void guess(){
@@ -20,14 +18,15 @@ public class GuessGame {
         int numberOfGuess = 0;
         int num;
         do {
-            System.out.println("Guess a number between 1 and 1000");
-            num = scan.nextInt();
+            num = input("Guess a number between 1 and 1000");
             numberOfGuess++;
 
-            if (num < guess) {
-                System.out.println("Too Low.. Try Again!!!!!!");
+            boolean isLessThanAnswer = num < guess;
+            if (isLessThanAnswer) {
+                display("Too Low.. Try Again!!!!!!");
             } else {
-                if (num == guess) {
+                boolean isCorrect = num == guess;
+                if (isCorrect) {
                     display("Congratulations, You guessed the number!!!");
                     promptUserForMoreQuestion();
                 } else {
@@ -38,11 +37,13 @@ public class GuessGame {
         while (num != guess);
 
         System.out.printf("The number of trial is %d%n", numberOfGuess);
-        if (numberOfGuess < 10){
+        boolean isNumberOfGuessLessThanTen = numberOfGuess < 10;
+        if (isNumberOfGuessLessThanTen){
             display("Either you know the secret or You got lucky");
         }
         else {
-            if (numberOfGuess == 10){
+            boolean numberOfGuessIsTen = numberOfGuess == 10;
+            if (numberOfGuessIsTen){
                 display("Aha. You know the secret");
             }
             else {
@@ -52,9 +53,9 @@ public class GuessGame {
         }
     }
     public static void promptUserForMoreQuestion(){
-        display("Press 1 to Continue And Press 2 To End Game");
-        int response  = scan.nextInt();
-        if (response == 1){
+        int response  = input("Press 1 to continue And Press 2 To End Game");
+        boolean responseIsOne = response == 1;
+        if (responseIsOne){
             guess();
         }
         else {
@@ -64,5 +65,10 @@ public class GuessGame {
 
     public static void display(String message) {
         System.out.println(message);
+    }
+
+    public static int input(String message){
+        display(message);
+        return scan.nextInt();
     }
 }

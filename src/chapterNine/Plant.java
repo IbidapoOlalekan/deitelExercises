@@ -1,7 +1,7 @@
 package chapterNine;
 
 public class Plant extends LivingThing{
-    public Plant(){
-        super("Plant");
+    public Plant(String name){
+        super(name);
     }
 }
